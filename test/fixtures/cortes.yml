@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  IDcorte: 1
+  peso: 1.5
+  piezas: 1.5
+  IDlote: 1
+  idArticulo: 1
+  reempaque: MyString
+  Etiqueta: MyString
+  eliminado: false
+  vendido: false
+  agregado: 1.5
+  Estatus: MyString
+  Inventariado: false
+  Consecutivo: 1
+  Caducidad: MyString
+
+two:
+  IDcorte: 1
+  peso: 1.5
+  piezas: 1.5
+  IDlote: 1
+  idArticulo: 1
+  reempaque: MyString
+  Etiqueta: MyString
+  eliminado: false
+  vendido: false
+  agregado: 1.5
+  Estatus: MyString
+  Inventariado: false
+  Consecutivo: 1
+  Caducidad: MyString

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  idTarima: 1
+  CodigoTarima: MyString
+  Fecha: 2014-08-22
+  Activa: false
+
+two:
+  idTarima: 1
+  CodigoTarima: MyString
+  Fecha: 2014-08-22
+  Activa: false

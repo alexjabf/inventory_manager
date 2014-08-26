@@ -1,0 +1,37 @@
+<div class="table-responsive" style="margin-top: 20px;">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t('layouts.application.actions') %></th>
+        <th><%= t'.id' %></th>
+        <th><%= t'.first_name' %></th>
+        <th><%= t'.last_name' %></th>
+        <th><%= t'.role_id' %></th>
+        <th><%= t'.active' %></th>
+        <th><%= t'.created_at' %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <% @model = user %> 
+        <tr>
+          <td><%= render "partials/index_links" %></td>
+          <%if can? :show, User %>
+            <td><%=link_to user.id, user, :class => "btn btn-xs btn-primary" %></td>
+          <%else%>
+            <td><%= label user.id, user.id, :class => "btn btn-xs btn-default", :disabled => true%></td>
+          <%end%>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td>
+            <% if user.role %>
+              <%= link_to_if((can? :show, Role), user.role.select_display, user.role, :title => t("actions.show",  model: t("activerecord.models.role"))) if user.role_id %>
+            <% end %>
+          </td>
+          <td><%= t(user.active.to_s) %></td>
+          <td><%= I18n.l user.created_at, :format => :long if user.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

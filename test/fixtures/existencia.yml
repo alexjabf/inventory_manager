@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  IdExistencia: 1
+  IdArticulo: 1
+  IdAlmacen: 1
+  Cantidad: 1
+  Fecha: MyString
+  FechaCad: MyString
+
+two:
+  IdExistencia: 1
+  IdArticulo: 1
+  IdAlmacen: 1
+  Cantidad: 1
+  Fecha: MyString
+  FechaCad: MyString

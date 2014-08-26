@@ -1,0 +1,31 @@
+<div class="table-responsive" style="margin-top: 20px;">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t('layouts.application.actions') %></th>
+        <th><%= t'.IdAlmacen' %></th>
+        <th><%= t'.Nombre' %></th>
+        <th><%= t'.TipoAlmacen' %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @almacenes.each do |almacene| %>
+
+
+        <% @model = almacene %> 
+
+        <tr>
+          <td><%= render "partials/index_links" %></td>
+          <%if can? :show, Familium %>
+            <td><%=link_to almacene.IdAlmacen, almacene, :class => "btn btn-xs btn-primary" %></td>
+          <%else%>
+            <td><%= label almacene.IdAlmacen, almacene.IdAlmacen, :class => "btn btn-xs btn-default", :disabled => true%></td>
+          <%end%>
+          <td><%= almacene.Nombre %></td>
+          <td><%= almacene.TipoAlmacen %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

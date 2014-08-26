@@ -1,0 +1,33 @@
+<div class="table-responsive" style="margin-top: 20px;">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t('layouts.application.actions') %></th>
+        <th><%= t'.idTarima' %></th>
+        <th><%= t'.CodigoTarima' %></th>
+        <th><%= t'.Fecha' %></th>
+        <th><%= t'.Activa' %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tarimas.each do |tarima| %>
+
+
+        <% @model = tarima %> 
+
+        <tr>
+          <td><%= render "partials/index_links" %></td>
+          <%if can? :show, Tarima %>
+            <td><%=link_to tarima.id, tarima, :class => "btn btn-xs btn-primary" %></td>
+          <%else%>
+            <td><%= label tarima.id, tarima.id, :class => "btn btn-xs btn-default", :disabled => true%></td>
+          <%end%>
+          <td><%= tarima.CodigoTarima %></td>
+          <td><%= I18n.l tarima.Fecha, :format => :long if tarima.Fecha %></td>
+          <td><%= t(tarima.Activa.to_s) unless tarima.Activa.nil? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

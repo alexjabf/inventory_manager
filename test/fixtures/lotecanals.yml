@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  IDlote: 1
+  IDfolio: 1
+  pesoinicial: 1.5
+  pesofinal: 1.5
+  costoinicial: 1.5
+  costofinal: 1.5
+  costosIndirectos: 1.5
+  manoObra: 1.5
+  numfactura: 1
+  sebo: 1.5
+  hueso: 1.5
+  aserrin: 1.5
+  consecutivo: 1
+  fecha: MyString
+  estado: MyString
+  cierrefecha: MyString
+  descripcion: MyText
+
+two:
+  IDlote: 1
+  IDfolio: 1
+  pesoinicial: 1.5
+  pesofinal: 1.5
+  costoinicial: 1.5
+  costofinal: 1.5
+  costosIndirectos: 1.5
+  manoObra: 1.5
+  numfactura: 1
+  sebo: 1.5
+  hueso: 1.5
+  aserrin: 1.5
+  consecutivo: 1
+  fecha: MyString
+  estado: MyString
+  cierrefecha: MyString
+  descripcion: MyText

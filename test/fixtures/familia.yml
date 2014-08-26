@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  idFamilia: 1
+  FamClave: MyString
+  FamDescripcion: MyText
+
+two:
+  idFamilia: 1
+  FamClave: MyString
+  FamDescripcion: MyText

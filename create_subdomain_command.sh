@@ -1,0 +1,1 @@
+echo "504 ADD houses railstogodevelopment.com 0 /home/railsdev/public_html/houses" | /usr/local/cpanel/bin/domainadmin

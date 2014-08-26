@@ -1,0 +1,89 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%=t("actions.new",  model: t("activerecord.models.#{controller_name.singularize}"))%></h3>
+  </div>
+  <div class="panel-body"> 
+<%= form_for(@lotecanal) do |f| %>
+<%= render "partials/form_errors" %>
+<div class="left-custom-column">
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :IDlote %><br>
+<%= f.number_field :IDlote, placeholder: t('layouts.application.required'), i18n_name: t('lotecanals.index.IDlote'), required: true, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('lotecanals.index.IDlote') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :IDfolio %><br>
+<%= f.number_field :IDfolio, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.IDfolio'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('lotecanals.index.IDfolio') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :pesoinicial %><br>
+<%= f.number_field :pesoinicial, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.pesoinicial'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.pesoinicial') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :pesofinal %><br>
+<%= f.number_field :pesofinal, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.pesofinal'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.pesofinal') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :costoinicial %><br>
+<%= f.number_field :costoinicial, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.costoinicial'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.costoinicial') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :costofinal %><br>
+<%= f.number_field :costofinal, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.costofinal'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.costofinal') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :costosIndirectos %><br>
+<%= f.number_field :costosIndirectos, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.costosIndirectos'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.costosIndirectos') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :manoObra %><br>
+<%= f.number_field :manoObra, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.manoObra'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.manoObra') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :numfactura %><br>
+<%= f.number_field :numfactura, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.numfactura'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('lotecanals.index.numfactura') %>
+    </div>
+  </div>
+<div class="right-custom-column">
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :sebo %><br>
+<%= f.number_field :sebo, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.sebo'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.sebo') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :hueso %><br>
+<%= f.number_field :hueso, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.hueso'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.hueso') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :aserrin %><br>
+<%= f.number_field :aserrin, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.aserrin'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.aserrin') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :consecutivo %><br>
+<%= f.number_field :consecutivo, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.consecutivo'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('lotecanals.index.consecutivo') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :fecha %><br>
+<%= f.text_field :fecha, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.fecha'), required: false, readonly: false, minlength: 1, maxlength: 100, style: 'width: 200px;', validation_type: 'date', class: 'form-control', title: t('lotecanals.index.fecha') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :estado %><br>
+<%= f.select :estado, mx_states, {:include_blank => false, :prompt => true} ,{placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.estado'), required: false, readonly: false, minlength: 1, maxlength: 60, style: 'width: 200px;', validation_type: 'text', class: 'form-control', title: t('lotecanals.index.estado')} %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :cierrefecha %><br>
+<%= f.text_field :cierrefecha, placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.cierrefecha'), required: false, readonly: false, minlength: 1, maxlength: 100, style: 'width: 200px;', validation_type: 'date', class: 'form-control', title: t('lotecanals.index.cierrefecha') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :descripcion %><br>
+<%= f.text_area :descripcion, placeholder: t('layouts.application.required'), i18n_name: t('lotecanals.index.descripcion'), required: true, readonly: false, minlength: 50, maxlength: 500, style: 'width: 200px;', validation_type: 'text', class: 'form-control', title: t('lotecanals.index.descripcion') %>
+    </div>
+  </div>
+<div class='full-width'>
+  <!--HERE GOES NESTED FORM-->
+</div>
+<br>
+<div class='actions'>
+  <%= f.submit data: {disable_with: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :class => "btn btn-sm btn-primary", title: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase) %>  
+</div>
+<% end %>
+  </div>
+</div>

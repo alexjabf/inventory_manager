@@ -1,0 +1,49 @@
+<div class="table-responsive" style="margin-top: 20px;">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t('layouts.application.actions') %></th>
+        <th><%= t'.IDcorte' %></th>
+        <th><%= t'.peso' %></th>
+        <th><%= t'.piezas' %></th>
+        <th><%= t'.IDlote' %></th>
+        <th><%= t'.idarticulo' %></th>
+        <th><%= t'.reempaque' %></th>
+        <th><%= t'.Etiqueta' %></th>
+        <th><%= t'.eliminado' %></th>
+        <th><%= t'.vendido' %></th>
+        <th><%= t'.agregado' %></th>
+        <th><%= t'.Estatus' %></th>
+        <th><%= t'.Inventariado' %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cortes.each do |corte| %>
+
+
+        <% @model = corte %> 
+
+        <tr>
+          <td><%= render "partials/index_links" %></td>
+          <%if can? :show, Corte %>
+            <td><%=link_to corte.id, corte, :class => "btn btn-xs btn-primary" %></td>
+          <%else%>
+            <td><%= label corte.id, corte.id, :class => "btn btn-xs btn-default", :disabled => true%></td>
+          <%end%>
+          <td><%= number_with_delimiter(corte.peso, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(corte.piezas, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(corte.IDlote, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(corte.idarticulo, locale: session[:locale]) %></td>
+          <td><%= corte.reempaque %></td>
+          <td><%= corte.Etiqueta %></td>
+          <td><%= t(corte.eliminado.to_s) unless corte.eliminado.nil? %></td>
+          <td><%= t(corte.vendido.to_s) unless corte.vendido.nil? %></td>
+          <td><%= number_with_delimiter(corte.agregado, locale: session[:locale]) %></td>
+          <td><%= corte.Estatus %></td>
+          <td><%= t(corte.Inventariado.to_s) unless corte.Inventariado.nil? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

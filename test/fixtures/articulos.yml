@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  idArticulo: 1
+  idFamilia: 1
+  SubFamilia: 1
+  ArtClave: 1
+  ArtClaveAlterna: 1
+  descripcion: MyText
+  descripcion_corta: MyString
+  Cont: 1.5
+  idUnidad: 1
+  PiezasxCaja: 1
+  Costoxpza: 1.5
+  Costoxcaja: 1.5
+  Costoprod: 1.5
+  PzasxEmp: 1
+  Tipo_Articulo: MyString
+  Origen: MyString
+  Fecha: 2014-08-22
+  FechaModificacion: 2014-08-22
+  Activo: false
+  Categoria: MyString
+  idAlmacen: 1
+  costoUnidadMedida: 1.5
+  ultimoCosto: 1.5
+  costoPromedio: 1.5
+  tipoEtiqueta: MyString
+  precioVenta: 1.5
+
+two:
+  idArticulo: 1
+  idFamilia: 1
+  SubFamilia: 1
+  ArtClave: 1
+  ArtClaveAlterna: 1
+  descripcion: MyText
+  descripcion_corta: MyString
+  Cont: 1.5
+  idUnidad: 1
+  PiezasxCaja: 1
+  Costoxpza: 1.5
+  Costoxcaja: 1.5
+  Costoprod: 1.5
+  PzasxEmp: 1
+  Tipo_Articulo: MyString
+  Origen: MyString
+  Fecha: 2014-08-22
+  FechaModificacion: 2014-08-22
+  Activo: false
+  Categoria: MyString
+  idAlmacen: 1
+  costoUnidadMedida: 1.5
+  ultimoCosto: 1.5
+  costoPromedio: 1.5
+  tipoEtiqueta: MyString
+  precioVenta: 1.5

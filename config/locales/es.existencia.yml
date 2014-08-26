@@ -1,0 +1,37 @@
+es:
+  existencia:
+    show:
+      id: 'Id: '
+      IdExistencia: 'Existencia Id: '
+      IdArticulo: 'Articulo Id: '
+      IdAlmacen: 'Almacén Id: '
+      Cantidad: 'Cantidad: '
+      Fecha: 'Fecha: '
+      FechaCad: 'Fecha De Caducidad: '
+      created_at: 'Creada El: '
+      updated_at: 'Actualizada El: '
+    index:
+      id: 'Id'
+      IdExistencia: 'Existencia Id'
+      IdArticulo: 'Articulo Id'
+      IdAlmacen: 'Almacén Id'
+      Cantidad: 'Cantidad'
+      Fecha: 'Fecha'
+      FechaCad: 'Fecha De Caducidad'
+      created_at: 'Creada El'
+      updated_at: 'Actualizada El'
+  activerecord:
+    models:
+      existencium: 'Existencia'
+      existencia: 'Existencias'
+    attributes:
+      existencium:
+        id: 'Id: '
+        IdExistencia: 'Existencia Id: '
+        IdArticulo: 'Articulo Id: '
+        IdAlmacen: 'Almacén Id: '
+        Cantidad: 'Cantidad: '
+        Fecha: 'Fecha: '
+        FechaCad: 'Fecha De Caducidad: '
+        created_at: 'Creada El: '
+        updated_at: 'Actualizada El: '

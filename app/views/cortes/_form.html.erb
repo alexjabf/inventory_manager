@@ -1,0 +1,77 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%=t("actions.new",  model: t("activerecord.models.#{controller_name.singularize}"))%></h3>
+  </div>
+  <div class="panel-body"> 
+<%= form_for(@corte) do |f| %>
+<%= render "partials/form_errors" %>
+<div class="left-custom-column">
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :IDcorte %><br>
+<%= f.number_field :IDcorte, placeholder: t('layouts.application.required'), i18n_name: t('cortes.index.IDcorte'), required: true, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('cortes.index.IDcorte') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :peso %><br>
+<%= f.number_field :peso, placeholder: t('layouts.application.not_required'), i18n_name: t('cortes.index.peso'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('cortes.index.peso') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :piezas %><br>
+<%= f.number_field :piezas, placeholder: t('layouts.application.not_required'), i18n_name: t('cortes.index.piezas'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('cortes.index.piezas') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :IDlote %><br>
+<%= f.number_field :IDlote, placeholder: t('layouts.application.required'), i18n_name: t('cortes.index.IDlote'), required: true, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('cortes.index.IDlote') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :idarticulo %><br>
+<%= f.number_field :idarticulo, placeholder: t('layouts.application.required'), i18n_name: t('cortes.index.idArticulo'), required: true, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('cortes.index.idArticulo') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :reempaque %><br>
+<%= f.text_field :reempaque, placeholder: t('layouts.application.not_required'), i18n_name: t('cortes.index.reempaque'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'text', :class => 'form-control', title: t('cortes.index.reempaque') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :Etiqueta %><br>
+<%= f.text_field :Etiqueta, placeholder: t('layouts.application.not_required'), i18n_name: t('cortes.index.Etiqueta'), required: false, readonly: false, minlength: 1, maxlength: 25, style: 'width: 200px;', validation_type: 'text', :class => 'form-control', title: t('cortes.index.Etiqueta') %>
+    </div>
+  </div>
+<div class="right-custom-column">
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :eliminado %>
+<%= f.check_box :eliminado, i18n_name: t('cortes.index.eliminado'), checked: false, required: false, readonly: false, validation_type: 'boolean', :class => 'form-control', title: t('cortes.index.eliminado') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :vendido %>
+<%= f.check_box :vendido, i18n_name: t('cortes.index.vendido'), checked: false, required: false, readonly: false, validation_type: 'boolean', :class => 'form-control', title: t('cortes.index.vendido') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :agregado %><br>
+<%= f.number_field :agregado, placeholder: t('layouts.application.not_required'), i18n_name: t('cortes.index.agregado'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('cortes.index.agregado') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :Estatus %><br>
+<%= f.text_field :Estatus, placeholder: t('layouts.application.not_required'), i18n_name: t('cortes.index.Estatus'), required: false, readonly: false, minlength: 1, maxlength: 6, style: 'width: 200px;', validation_type: 'text', :class => 'form-control', title: t('cortes.index.Estatus') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :Inventariado %>
+<%= f.check_box :Inventariado, i18n_name: t('cortes.index.Inventariado'), checked: false, required: false, readonly: false, validation_type: 'boolean', :class => 'form-control', title: t('cortes.index.Inventariado') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :Consecutivo %><br>
+<%= f.number_field :Consecutivo, placeholder: t('layouts.application.not_required'), i18n_name: t('cortes.index.Consecutivo'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('cortes.index.Consecutivo') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :Caducidad %><br>
+<%= f.text_field :Caducidad, placeholder: t('layouts.application.not_required'), i18n_name: t('cortes.index.Caducidad'), required: false, readonly: false, minlength: 1, maxlength: 60, style: 'width: 200px;', validation_type: 'date', :class => 'form-control', title: t('cortes.index.Caducidad') %>
+    </div>
+  </div>
+<div class='full-width'>
+  <!--HERE GOES NESTED FORM-->
+</div>
+<br>
+<div class='actions'>
+  <%= f.submit data: {disable_with: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :class => "btn btn-sm btn-primary", title: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase) %>  
+</div>
+<% end %>
+  </div>
+</div>

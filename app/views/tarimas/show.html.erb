@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="list-group">
+      <% unless @tarima.idTarima.blank? %>
+        <li class="list-group-item active">
+          <b><%= t'.idTarima' %></b> <%= number_with_delimiter(@tarima.idTarima, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @tarima.CodigoTarima.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.CodigoTarima' %></b> <%= @tarima.CodigoTarima %>
+        </li>
+      <% end %>
+      <% unless @tarima.Fecha.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Fecha' %></b> <%= I18n.l @tarima.Fecha, :format => :long%>
+        </li>
+      <% end %>
+      <% unless @tarima.Activa.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Activa' %></b> <%= t(@tarima.Activa.to_s) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!--HERE GOES NESTED INDEX-->

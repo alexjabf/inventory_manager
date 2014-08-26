@@ -1,0 +1,31 @@
+es:
+  tarimas:
+    show:
+      id: 'Id: '
+      idTarima: 'Tarima Id: '
+      CodigoTarima: 'Código De Tarima: '
+      Fecha: 'Fecha: '
+      Activa: 'Activa: '
+      created_at: 'Creada El: '
+      updated_at: 'Actualizada El: '
+    index:
+      id: 'Id'
+      idTarima: 'Tarima Id'
+      CodigoTarima: 'Código De Tarima'
+      Fecha: 'Fecha'
+      Activa: 'Activa'
+      created_at: 'Creada El'
+      updated_at: 'Actualizada El'
+  activerecord:
+    models:
+      tarima: 'Tarima'
+      tarimas: 'Tarimas'
+    attributes:
+      tarima:
+        id: 'Id: '
+        idTarima: 'Tarima Id: '
+        CodigoTarima: 'Código De Tarima: '
+        Fecha: 'Fecha: '
+        Activa: 'Activa: '
+        created_at: 'Creada El: '
+        updated_at: 'Actualizada El: '

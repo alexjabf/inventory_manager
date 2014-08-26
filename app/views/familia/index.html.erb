@@ -1,0 +1,31 @@
+<div class="table-responsive" style="margin-top: 20px;">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t('layouts.application.actions') %></th>
+        <th><%= t'.id' %></th>
+        <th><%= t'.FamClave' %></th>
+        <th><%= t'.FamDescripcion' %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @familia.each do |familium| %>
+
+
+        <% @model = familium %> 
+
+        <tr>
+          <td><%= render "partials/index_links" %></td>
+          <%if can? :show, Familium %>
+            <td><%=link_to familium.id, familium, :class => "btn btn-xs btn-primary" %></td>
+          <%else%>
+            <td><%= label familium.id, familium.id, :class => "btn btn-xs btn-default", :disabled => true%></td>
+          <%end%>
+          <td><%= familium.FamClave %></td>
+          <td><%= familium.FamDescripcion %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

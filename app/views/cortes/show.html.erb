@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="list-group">
+      <% unless @corte.id.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.id' %></b> <%= @corte.id %>
+        </li>
+      <% end %>
+      <% unless @corte.IDcorte.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.IDcorte' %></b> <%= number_with_delimiter(@corte.IDcorte, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @corte.peso.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.peso' %></b> <%= number_with_delimiter(@corte.peso, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @corte.piezas.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.piezas' %></b> <%= number_with_delimiter(@corte.piezas, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @corte.IDlote.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.IDlote' %></b> <%= number_with_delimiter(@corte.IDlote, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @corte.idarticulo.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.idarticulo' %></b> <%= number_with_delimiter(@corte.idarticulo, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @corte.reempaque.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.reempaque' %></b> <%= @corte.reempaque %>
+        </li>
+      <% end %>
+      <% unless @corte.Etiqueta.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Etiqueta' %></b> <%= @corte.Etiqueta %>
+        </li>
+      <% end %>
+      <% unless @corte.eliminado.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.eliminado' %></b> <%= t(@corte.eliminado.to_s) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!--HERE GOES NESTED INDEX-->

@@ -1,0 +1,45 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%=t("actions.new",  model: t("activerecord.models.#{controller_name.singularize}"))%></h3>
+  </div>
+  <div class="panel-body"> 
+<%= form_for(@existencium) do |f| %>
+<%= render "partials/form_errors" %>
+<div class="left-custom-column">
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :IdExistencia %><br>
+<%= f.number_field :IdExistencia, placeholder: t('layouts.application.required'), i18n_name: t('existencia.index.IdExistencia'), required: true, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('existencia.index.IdExistencia') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :IdArticulo %><br>
+<%= f.number_field :IdArticulo, placeholder: t('layouts.application.required'), i18n_name: t('existencia.index.IdArticulo'), required: true, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('existencia.index.IdArticulo') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :IdAlmacen %><br>
+<%= f.number_field :IdAlmacen, placeholder: t('layouts.application.required'), i18n_name: t('existencia.index.IdAlmacen'), required: true, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('existencia.index.IdAlmacen') %>
+    </div>
+  </div>
+<div class="right-custom-column">
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :Cantidad %><br>
+<%= f.number_field :Cantidad, placeholder: t('layouts.application.not_required'), i18n_name: t('existencia.index.Cantidad'), required: false, readonly: false, minlength: 1, maxlength: 10, style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('existencia.index.Cantidad') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :Fecha %><br>
+<%= f.text_field :Fecha, placeholder: t('layouts.application.not_required'), i18n_name: t('existencia.index.Fecha'), required: false, readonly: false, minlength: 1, maxlength: 100, style: 'width: 200px;', validation_type: 'date', class: 'form-control', title: t('existencia.index.Fecha') %>
+    </div>
+          <div class="field" style="margin-top: 10px;">
+      <%= f.label :FechaCad %><br>
+<%= f.text_field :FechaCad, placeholder: t('layouts.application.not_required'), i18n_name: t('existencia.index.FechaCad'), required: false, readonly: false, minlength: 1, maxlength: 100, style: 'width: 200px;', validation_type: 'date', class: 'form-control', title: t('existencia.index.FechaCad') %>
+    </div>
+  </div>
+<div class='full-width'>
+  <!--HERE GOES NESTED FORM-->
+</div>
+<br>
+<div class='actions'>
+  <%= f.submit data: {disable_with: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :class => "btn btn-sm btn-primary", title: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase) %>  
+</div>
+<% end %>
+  </div>
+</div>

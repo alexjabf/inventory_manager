@@ -1,0 +1,133 @@
+<%= form_tag lotecanals_path, :method => "get", :id => "advanced-search-form"  do %>
+<div class="modal-body" >
+  <div  id="search-options" class="full-width">
+    <%= select_tag(:search_by_or_and, options_for_select([[t("partials.search_options.or"), "OR"], [t("partials.search_options.and"), "AND"]], params[:search_by_or_and]), {:prompt => t('partials.search_options.search_by_or_and'), :style =>"margin-bottom: -5px; width: auto;"})%>
+    <%= select_tag(:search_by, options_for_select([[t("partials.search_options.like"), false], [t("partials.search_options.equal"), true]], params[:search_by]), {:prompt => t('partials.search_options.search_by'), :style =>"margin-bottom: -5px; width: auto;"})%>           
+    <%= select_tag(:order_by, options_for_select(@indexable_columns, params[:order_by]), {:prompt => t('partials.search_options.order_by'), :style =>"width: auto;"})%> 
+    <%= select_tag(:sort_by, options_for_select([[t("partials.search_options.asc"), "ASC"], [t("partials.search_options.desc"), "DESC"]], params[:sort_by]), {:prompt => t('partials.search_options.sort_by'), :style =>"margin-bottom: -5px; width: auto;"})%>   
+    <%= select_tag(:per_page, options_for_select([10,20,30,40,50,60,70,80,90,100, [t('partials.search_options.all_records'), eval("@#{controller_name}.count")]], params[:per_page].to_i), {:prompt => t('partials.search_options.select_page_numbers'), :style =>"width: auto;"})%>    
+    <%= hidden_field_tag :controller_name, :controller_name, :value => controller_name, :read_only => true %>
+  </div>
+  <div class="left-custom-column">
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.id') %>
+<%= number_field_tag :id, params[:id], placeholder: t('layouts.application.required'), i18n_name: t('lotecanals.index.id'), style: 'width: 40px;', validation_type: 'number', title: t('lotecanals.index.id') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.IDlote') %>
+<%= number_field_tag :IDlote, params[:IDlote], placeholder: t('layouts.application.required'), i18n_name: t('lotecanals.index.IDlote'), style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('lotecanals.index.IDlote') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.IDfolio') %>
+<%= number_field_tag :IDfolio, params[:IDfolio], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.IDfolio'), style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('lotecanals.index.IDfolio') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.pesoinicial') %>
+<%= number_field_tag :pesoinicial, params[:pesoinicial], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.pesoinicial'), style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.pesoinicial') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.pesofinal') %>
+<%= number_field_tag :pesofinal, params[:pesofinal], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.pesofinal'), style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.pesofinal') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.costoinicial') %>
+<%= number_field_tag :costoinicial, params[:costoinicial], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.costoinicial'), style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.costoinicial') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.costofinal') %>
+<%= number_field_tag :costofinal, params[:costofinal], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.costofinal'), style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.costofinal') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.costosIndirectos') %>
+<%= number_field_tag :costosIndirectos, params[:costosIndirectos], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.costosIndirectos'), style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.costosIndirectos') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.manoObra') %>
+<%= number_field_tag :manoObra, params[:manoObra], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.manoObra'), style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.manoObra') %>
+      </div>
+    
+  </div>
+  <div class="right-custom-column">
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.numfactura') %>
+<%= number_field_tag :numfactura, params[:numfactura], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.numfactura'), style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('lotecanals.index.numfactura') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.sebo') %>
+<%= number_field_tag :sebo, params[:sebo], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.sebo'), style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.sebo') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.hueso') %>
+<%= number_field_tag :hueso, params[:hueso], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.hueso'), style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.hueso') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.aserrin') %>
+<%= number_field_tag :aserrin, params[:aserrin], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.aserrin'), style: 'width: 200px;', validation_type: 'decimal', class: 'form-control', title: t('lotecanals.index.aserrin') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.consecutivo') %>
+<%= number_field_tag :consecutivo, params[:consecutivo], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.consecutivo'), style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('lotecanals.index.consecutivo') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.fecha') %>
+<%= text_field_tag :fecha, params[:fecha], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.fecha'), style: 'width: 200px;', validation_type: 'date', class: 'form-control', title: t('lotecanals.index.fecha') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.estado') %>
+<%= select :estado, params[:estado], mx_states, {:include_blank => false, :prompt => true} ,{placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.estado'), style: 'width: 200px;', validation_type: 'text', class: 'form-control', title: t('lotecanals.index.estado')} %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.cierrefecha') %>
+<%= text_field_tag :cierrefecha, params[:cierrefecha], placeholder: t('layouts.application.not_required'), i18n_name: t('lotecanals.index.cierrefecha'), style: 'width: 200px;', validation_type: 'date', class: 'form-control', title: t('lotecanals.index.cierrefecha') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('lotecanals.show.descripcion') %>
+<%= text_area_tag :descripcion, params[:descripcion], placeholder: t('layouts.application.required'), i18n_name: t('lotecanals.index.descripcion'), style: 'width: 200px;', validation_type: 'text', class: 'form-control', title: t('lotecanals.index.descripcion') %>
+      </div>
+    
+  </div>
+</div>
+<div class="modal-footer">
+  <%=link_to  "#", title: t("layouts.application.form_reset"), onclick: "formReset($('#advanced-search-form'));", :class => 'btn btn-sm btn-default' do%>
+  <i class="icon-refresh"></i>
+  <%end%>
+  <button type="button" class="btn btn-default" data-dismiss="modal"><%=t(:cancel)%></button>
+  <%= submit_tag t("actions.search",  model: t("activerecord.models.#{controller_name}").titlecase), data: {disable_with: t("actions.searching",  model: t("activerecord.models.#{controller_name}").titlecase)}, :class => "btn btn-sm btn-primary", title: t("actions.search",  model: t("activerecord.models.#{controller_name}").titlecase) %> 
+</div>
+<% end %>

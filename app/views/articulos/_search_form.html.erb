@@ -1,0 +1,175 @@
+<%= form_tag articulos_path, :method => "get", :id => "advanced-search-form"  do %>
+<div class="modal-body" >
+  <div  id="search-options" class="full-width">
+    <%= select_tag(:search_by_or_and, options_for_select([[t("partials.search_options.or"), "OR"], [t("partials.search_options.and"), "AND"]], params[:search_by_or_and]), {:prompt => t('partials.search_options.search_by_or_and'), :style =>"margin-bottom: -5px; width: auto;"})%>
+    <%= select_tag(:search_by, options_for_select([[t("partials.search_options.like"), false], [t("partials.search_options.equal"), true]], params[:search_by]), {:prompt => t('partials.search_options.search_by'), :style =>"margin-bottom: -5px; width: auto;"})%>           
+    <%= select_tag(:order_by, options_for_select(@indexable_columns, params[:order_by]), {:prompt => t('partials.search_options.order_by'), :style =>"width: auto;"})%> 
+    <%= select_tag(:sort_by, options_for_select([[t("partials.search_options.asc"), "ASC"], [t("partials.search_options.desc"), "DESC"]], params[:sort_by]), {:prompt => t('partials.search_options.sort_by'), :style =>"margin-bottom: -5px; width: auto;"})%>   
+    <%= select_tag(:per_page, options_for_select([10,20,30,40,50,60,70,80,90,100, [t('partials.search_options.all_records'), eval("@#{controller_name}.count")]], params[:per_page].to_i), {:prompt => t('partials.search_options.select_page_numbers'), :style =>"width: auto;"})%>    
+    <%= hidden_field_tag :controller_name, :controller_name, :value => controller_name, :read_only => true %>
+  </div>
+  <div class="left-custom-column">
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.id') %>
+<%= number_field_tag :id, params[:id], placeholder: t('layouts.application.required'), i18n_name: t('articulos.index.id'), style: 'width: 40px;', validation_type: 'number', title: t('articulos.index.id') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.idArticulo') %>
+<%= number_field_tag :idArticulo, params[:idArticulo], placeholder: t('layouts.application.required'), i18n_name: t('articulos.index.idArticulo'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.idArticulo') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.idFamilia') %>
+<%= number_field_tag :idFamilia, params[:idFamilia], placeholder: t('layouts.application.required'), i18n_name: t('articulos.index.idFamilia'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.idFamilia') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.SubFamilia') %>
+<%= number_field_tag :SubFamilia, params[:SubFamilia], placeholder: t('layouts.application.required'), i18n_name: t('articulos.index.SubFamilia'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.SubFamilia') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.ArtClave') %>
+<%= number_field_tag :ArtClave, params[:ArtClave], placeholder: t('layouts.application.required'), i18n_name: t('articulos.index.ArtClave'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.ArtClave') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.ArtClaveAlterna') %>
+<%= number_field_tag :ArtClaveAlterna, params[:ArtClaveAlterna], placeholder: t('layouts.application.required'), i18n_name: t('articulos.index.ArtClaveAlterna'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.ArtClaveAlterna') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.descripcion') %>
+<%= text_area_tag :descripcion, params[:descripcion], placeholder: t('layouts.application.required'), i18n_name: t('articulos.index.descripcion'), style: 'width: 200px;', validation_type: 'text', :class => 'form-control', title: t('articulos.index.descripcion') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.descripcion_corta') %>
+<%= text_field_tag :descripcion_corta, params[:descripcion_corta], placeholder: t('layouts.application.required'), i18n_name: t('articulos.index.descripcion_corta'), style: 'width: 200px;', validation_type: 'text', :class => 'form-control', title: t('articulos.index.descripcion_corta') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.Cont') %>
+<%= number_field_tag :Cont, params[:Cont], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.Cont'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.Cont') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.idUnidad') %>
+<%= number_field_tag :idUnidad, params[:idUnidad], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.idUnidad'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.idUnidad') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.PiezasxCaja') %>
+<%= number_field_tag :PiezasxCaja, params[:PiezasxCaja], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.PiezasxCaja'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.PiezasxCaja') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.Costoxpza') %>
+<%= number_field_tag :Costoxpza, params[:Costoxpza], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.Costoxpza'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.Costoxpza') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.Costoxcaja') %>
+<%= number_field_tag :Costoxcaja, params[:Costoxcaja], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.Costoxcaja'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.Costoxcaja') %>
+      </div>
+    
+  </div>
+  <div class="right-custom-column">
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.Costoprod') %>
+<%= number_field_tag :Costoprod, params[:Costoprod], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.Costoprod'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.Costoprod') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.PzasxEmp') %>
+<%= number_field_tag :PzasxEmp, params[:PzasxEmp], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.PzasxEmp'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.PzasxEmp') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.Tipo_Articulo') %>
+<%= text_field_tag :Tipo_Articulo, params[:Tipo_Articulo], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.Tipo_Articulo'), style: 'width: 200px;', validation_type: 'text', :class => 'form-control', title: t('articulos.index.Tipo_Articulo') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.Origen') %>
+<%= text_field_tag :Origen, params[:Origen], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.Origen'), style: 'width: 200px;', validation_type: 'text', :class => 'form-control', title: t('articulos.index.Origen') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.Activo') %>
+<%= check_box_tag :Activo, params[:Activo], i18n_name: t('articulos.index.Activo'), checked: false, validation_type: 'boolean', :class => 'form-control', title: t('articulos.index.Activo') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.Categoria') %>
+<%= text_field_tag :Categoria, params[:Categoria], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.Categoria'), style: 'width: 200px;', validation_type: 'name', :class => 'form-control', title: t('articulos.index.Categoria') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.idAlmacen') %>
+<%= number_field_tag :idAlmacen, params[:idAlmacen], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.idAlmacen'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.idAlmacen') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.costoUnidadMedida') %>
+<%= number_field_tag :costoUnidadMedida, params[:costoUnidadMedida], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.costoUnidadMedida'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.costoUnidadMedida') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.ultimoCosto') %>
+<%= number_field_tag :ultimoCosto, params[:ultimoCosto], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.ultimoCosto'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.ultimoCosto') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.costoPromedio') %>
+<%= number_field_tag :costoPromedio, params[:costoPromedio], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.costoPromedio'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.costoPromedio') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.tipoEtiqueta') %>
+<%= text_field_tag :tipoEtiqueta, params[:tipoEtiqueta], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.tipoEtiqueta'), style: 'width: 200px;', validation_type: 'text', :class => 'form-control', title: t('articulos.index.tipoEtiqueta') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('articulos.show.precioVenta') %>
+<%= number_field_tag :precioVenta, params[:precioVenta], placeholder: t('layouts.application.not_required'), i18n_name: t('articulos.index.precioVenta'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('articulos.index.precioVenta') %>
+      </div>
+    
+  </div>
+</div>
+<div class="modal-footer">
+  <%=link_to  "#", title: t("layouts.application.form_reset"), onclick: "formReset($('#advanced-search-form'));", :class => 'btn btn-sm btn-default' do%>
+  <i class="icon-refresh"></i>
+  <%end%>
+  <button type="button" class="btn btn-default" data-dismiss="modal"><%=t(:cancel)%></button>
+  <%= submit_tag t("actions.search",  model: t("activerecord.models.#{controller_name}").titlecase), data: {disable_with: t("actions.searching",  model: t("activerecord.models.#{controller_name}").titlecase)}, :class => "btn btn-sm btn-primary", title: t("actions.search",  model: t("activerecord.models.#{controller_name}").titlecase) %> 
+</div>
+<% end %>

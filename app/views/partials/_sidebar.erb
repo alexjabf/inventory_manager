@@ -1,0 +1,51 @@
+<%if signed_in? and current_user.role.superadmin%>
+  <li class="active"><%=link_to root_path, title: t("layouts.application.tools") do%>
+      <i class="fa fa-fw fa-dashboard"></i><%=t("layouts.application.tools")%></li>
+  <%end%>
+  <%if can?  :index, CustomScaffold%>
+    <li><%=link_to custom_scaffolds_path, title: t("activerecord.models.custom_scaffolds"), :id => "sidemenu-custom_scaffolds" do%>
+        <i class="fa fa-fw fa-arrow-right"></i><%= t("activerecord.models.custom_scaffolds") %></li>
+    <%end%>
+  <%end%>
+  <%if can?  :new, CustomScaffold%>
+    <li><%=link_to new_custom_scaffold_path, title: t("custom_scaffolds.create_custom_scaffold"), :id => "sidemenu-create-custom_scaffold" do%>
+        <i class="icon-circle-arrow-right"></i><%= t("custom_scaffolds.create_custom_scaffold") %></li>
+    <%end%>
+  <%end%>
+  <%if can? :create, CustomScaffold and can? :destroy, CustomScaffold%>
+    <li><%=link_to custom_scaffolds_rebuild_entire_application_path, title: t("custom_scaffolds.tools.rebuild_app"), :id => "sidemenu-rebuild-app", :remote => true do%>
+        <i class="icon-circle-arrow-right"></i><%= t("custom_scaffolds.tools.rebuild_app") %></li>
+    <%end%>
+  <%end%>
+  <%if can? :index, SchemaMigration and%>
+    <li><%=link_to schema_migrations_path, title: t("activerecord.models.schema_migrations"), :id => "sidemenu-column_attributes" do%>
+        <i class="icon-circle-arrow-right"></i><%= t("activerecord.models.schema_migrations") %></li>
+    <%end%>
+  <%end%>
+<%elsif !signed_in?%>
+  <li class="active"><%=link_to new_user_session_path, title: t(:login), :id => "sidemenu-sessions" do%>
+      <i class="fa fa-fw fa-sign-in"></i><%=t(:login)%>
+    <%end%></li>
+<%end%>
+
+<%if signed_in?%>
+  <li class="active"><%=link_to root_path, title: t("layouts.application.menu") do%>
+      <i class="fa fa-fw fa-dashboard"></i><%=t("layouts.application.menu")%></li>
+  <%end%>
+  <% @sidebar.each do |model|%>
+    <%if can? :index, to_model(model["name"]) %>
+      <li><%=link_to eval("#{to_controller_name(model["name"])}_path"), title: model["human_name"], :id => "sidemenu" + to_controller_name(model["name"]) do%>
+          <i class="fa fa-fw fa-arrow-right"></i><%=model["human_name"] + " (" + to_model(model["name"]).count.to_s + ")"%></li>
+      <%end%>
+      </hr>
+    <%end%> 
+  <%end%>
+<%end%>
+
+<% if controller_name == "custom_scaffolds1" and action_name != "index" and action_name != "show" %>
+  <div id="current-element">
+    <h6 id="main-title" class ="selected-element"><%=t('custom_scaffolds.current_element')%></h6>
+  </div>
+<% end %>
+
+<%#= link_to image_tag("/assets/LogoEMC.png", size: '240x260'), root_path %>

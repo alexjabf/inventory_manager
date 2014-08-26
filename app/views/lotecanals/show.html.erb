@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="list-group">
+      <% unless @lotecanal.id.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.id' %></b> <%= @lotecanal.id %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.IDlote.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.IDlote' %></b> <%= number_with_delimiter(@lotecanal.IDlote, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.IDfolio.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.IDfolio' %></b> <%= number_with_delimiter(@lotecanal.IDfolio, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.pesoinicial.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.pesoinicial' %></b> <%= number_with_delimiter(@lotecanal.pesoinicial, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.pesofinal.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.pesofinal' %></b> <%= number_with_delimiter(@lotecanal.pesofinal, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.costoinicial.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.costoinicial' %></b> <%= number_with_delimiter(@lotecanal.costoinicial, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.costofinal.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.costofinal' %></b> <%= number_with_delimiter(@lotecanal.costofinal, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.costosIndirectos.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.costosIndirectos' %></b> <%= number_with_delimiter(@lotecanal.costosIndirectos, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.manoObra.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.manoObra' %></b> <%= number_with_delimiter(@lotecanal.manoObra, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.descripcion.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.descripcion' %></b> <%= @lotecanal.descripcion %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.estado.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.estado' %></b> <%= @lotecanal.estado%>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<%if current_user.role_id == 1 or current_user.role_id == 2%>
+  <%= form_for @lotecanal, :html => { :class => 'form-horizontal' } do |f| %>
+    <%if @lotecanal.estado == "Cerrado"%>
+      <%state = "Abierto"%>
+      <%button_state = "Abrir Lote"%>
+    <%else%>
+      <%state = "Cerrado"%>
+      <%button_state = "Cerrar Lote"%>
+    <%end%>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.hidden_field :estado, :class => 'text_field', :value => state %>
+      </div>
+    </div>
+      <div class="form-actions">
+        <%= f.submit button_state, :class => 'btn btn-primary' %>
+      </div>
+  <% end %>
+<%end%>
+<br><br>
+<!--HERE GOES NESTED INDEX-->

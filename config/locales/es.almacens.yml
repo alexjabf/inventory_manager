@@ -1,0 +1,28 @@
+es:
+  almacens:
+    show:
+      id: 'Id: '
+      idAlmacen: 'Almacén: '
+      nombre: 'Nombre: '
+      TipoAlmacen: 'Tipo De Almacen: '
+      created_at: 'Creado El: '
+      updated_at: 'Actualizado El: '
+    index:
+      id: 'Id'
+      idAlmacen: 'Almacén'
+      nombre: 'Nombre'
+      TipoAlmacen: 'Tipo De Almacen'
+      created_at: 'Creado El'
+      updated_at: 'Actualizado El'
+  activerecord:
+    models:
+      almacen: 'Almacén'
+      almacens: 'Almacéns'
+    attributes:
+      almacen:
+        id: 'Id: '
+        idAlmacen: 'Almacén: '
+        nombre: 'Nombre: '
+        TipoAlmacen: 'Tipo De Almacen: '
+        created_at: 'Creado El: '
+        updated_at: 'Actualizado El: '

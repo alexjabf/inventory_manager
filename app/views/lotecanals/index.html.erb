@@ -1,0 +1,39 @@
+<div class="table-responsive" style="margin-top: 20px;">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <!--th><%#= t('layouts.application.actions') %></th!-->
+        <th><%= t'.IDlote' %></th>
+        <th><%= t'.pesoinicial' %></th>
+        <th><%= t'.pesofinal' %></th>
+        <th><%= t'.costoinicial' %></th>
+        <th><%= t'.costofinal' %></th>
+        <th><%= t'.estado' %></th>
+        <th><%= t'.descripcion' %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @lotecanals.each do |lotecanal| %>
+
+
+        <% @model = lotecanal %> 
+
+        <tr>
+          <!--td><%#= render "partials/index_links" %></td!-->
+          <%if can? :show, Lotecanal %>
+            <td><%=link_to lotecanal.IDlote, lotecanal, :class => "btn btn-xs btn-primary" %></td>
+          <%else%>
+            <td><%= label lotecanal.IDlote, lotecanal.IDlote, :class => "btn btn-xs btn-default", :disabled => true%></td>
+          <%end%>
+          <td><%= number_with_delimiter(lotecanal.pesoinicial, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(lotecanal.pesofinal, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(lotecanal.costoinicial, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(lotecanal.costofinal, locale: session[:locale]) %></td>
+          <td><%= lotecanal.estado %></td>
+          <td><%= lotecanal.descripcion %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

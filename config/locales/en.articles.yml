@@ -1,0 +1,22 @@
+en:
+  articles:
+    show:
+      id: 'Id: '
+      name: 'Nombre: '
+      created_at: 'Creado El: '
+      updated_at: 'Actualizado El: '
+    index:
+      id: 'Id'
+      name: 'Nombre'
+      created_at: 'Creado El'
+      updated_at: 'Actualizado El'
+  activerecord:
+    models:
+      article: 'Articulo'
+      articles: 'Articulos'
+    attributes:
+      article:
+        id: 'Id: '
+        name: 'Nombre: '
+        created_at: 'Creado El: '
+        updated_at: 'Actualizado El: '

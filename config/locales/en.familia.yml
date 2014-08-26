@@ -1,0 +1,28 @@
+en:
+  familia:
+    show:
+      id: 'Familia Id: '
+      idFamilia: 'Familia Id: '
+      FamClave: 'Clave De Familia: '
+      FamDescripcion: 'Descripción: '
+      created_at: 'Creada El: '
+      updated_at: 'Actualizada El: '
+    index:
+      id: 'Familia Id'
+      idFamilia: 'Familia Id'
+      FamClave: 'Clave De Familia'
+      FamDescripcion: 'Descripción'
+      created_at: 'Creada El'
+      updated_at: 'Actualizada El'
+  activerecord:
+    models:
+      familium: 'Familia'
+      familia: 'Familias'
+    attributes:
+      familium:
+        id: 'Familia Id: '
+        idFamilia: 'Familia Id: '
+        FamClave: 'Clave De Familia: '
+        FamDescripcion: 'Descripción: '
+        created_at: 'Creada El: '
+        updated_at: 'Actualizada El: '

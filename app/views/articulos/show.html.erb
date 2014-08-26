@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="list-group">
+      <% unless @articulo.idArticulo.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.idArticulo' %></b> <%= number_with_delimiter(@articulo.idArticulo, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.idFamilia.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.idFamilia' %></b> <%= number_with_delimiter(@articulo.idFamilia, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.SubFamilia.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.SubFamilia' %></b> <%= number_with_delimiter(@articulo.SubFamilia, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.ArtClave.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.ArtClave' %></b> <%= number_with_delimiter(@articulo.ArtClave, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.ArtClaveAlterna.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.ArtClaveAlterna' %></b> <%= number_with_delimiter(@articulo.ArtClaveAlterna, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.descripcion_corta.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.descripcion_corta' %></b> <%= @articulo.descripcion_corta %>
+        </li>
+      <% end %>
+      <% unless @articulo.Cont.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Cont' %></b> <%= number_with_delimiter(@articulo.Cont, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.idUnidad.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.idUnidad' %></b> <%= number_with_delimiter(@articulo.idUnidad, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.PiezasxCaja.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.PiezasxCaja' %></b> <%= number_with_delimiter(@articulo.PiezasxCaja, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.Costoxpza.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Costoxpza' %></b> <%= number_with_delimiter(@articulo.Costoxpza, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.Costoxcaja.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Costoxcaja' %></b> <%= number_with_delimiter(@articulo.Costoxcaja, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @articulo.Costoprod.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Costoprod' %></b> <%= number_with_delimiter(@articulo.Costoprod, locale: session[:locale]) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!--HERE GOES NESTED INDEX-->

@@ -1,0 +1,49 @@
+<div class="table-responsive" style="margin-top: 20px;">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t('layouts.application.actions') %></th>
+        <th><%= t'.idArticulo' %></th>
+        <th><%= t'.idFamilia' %></th>
+        <th><%= t'.SubFamilia' %></th>
+        <th><%= t'.ArtClave' %></th>
+        <th><%= t'.ArtClaveAlterna' %></th>
+        <th><%= t'.Descripcion' %></th>
+        <th><%= t'.PiezasxCaja' %></th>
+        <th><%= t'.Costoxpza' %></th>
+        <th><%= t'.Costoxcaja' %></th>
+        <th><%= t'.Costoprod' %></th>
+        <th><%= t'.PzasxEmp' %></th>
+        <th><%= t'.Tipo_Articulo' %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @articulos.each do |articulo| %>
+
+
+        <% @model = articulo %> 
+
+        <tr>
+          <td><%= render "partials/index_links" %></td>
+          <%if can? :show, Articulo %>
+            <td><%=link_to articulo.id, articulo, :class => "btn btn-xs btn-primary" %></td>
+          <%else%>
+            <td><%= label articulo.id, articulo.id, :class => "btn btn-xs btn-default", :disabled => true%></td>
+          <%end%>
+          <td><%= number_with_delimiter(articulo.idFamilia, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(articulo.SubFamilia, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(articulo.ArtClave, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(articulo.ArtClaveAlterna, locale: session[:locale]) %></td>
+          <td><%= articulo.Descripcion %></td>
+          <td><%= number_with_delimiter(articulo.PiezasxCaja, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(articulo.Costoxpza, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(articulo.Costoxcaja, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(articulo.Costoprod, locale: session[:locale]) %></td>
+          <td><%= number_with_delimiter(articulo.PzasxEmp, locale: session[:locale]) %></td>
+          <td><%= articulo.Tipo_Articulo %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

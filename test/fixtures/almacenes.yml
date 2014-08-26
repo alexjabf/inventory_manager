@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  IdAlmacen: 1
+  Nombre: MyString
+  TipoAlmacen: MyString
+
+two:
+  IdAlmacen: 1
+  Nombre: MyString
+  TipoAlmacen: MyString

@@ -1,0 +1,6 @@
+<%= "Your application has been created." %><br>
+<%= "Application Name: #{@app.app_name}"  %><br>
+<%= "username: #{@app.account.user.username}" %><br>
+<%= "password: #{@password}" %><br>
+<%= link_to "Launch Application", "http://#{@app.domain_name}.railstogodevelopment.com", :title => "http://#{@app.domain_name}.railstogodevelopment.com", :target => "_blank" %><br>
+<%= "Copyright © 2014 Rails To Go All rights reserved. Read more at: http://railstogo.com." %>

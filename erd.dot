@@ -1,0 +1,240 @@
+digraph BaseApp {
+rankdir = "LR";
+ranksep = "0.5";
+nodesep = "0.4";
+pad = "0.4,0.4";
+margin = "0,0";
+concentrate = "true";
+labelloc = "t";
+fontsize = "13";
+fontname = "Arial Bold";
+node[ shape  =  "Mrecord" , fontsize  =  "10" , fontname  =  "Arial" , margin  =  "0.07,0.05" , penwidth  =  "1.0"];
+edge[ fontname  =  "Arial" , fontsize  =  "7" , dir  =  "both" , arrowsize  =  "0.9" , penwidth  =  "1.0" , labelangle  =  "32" , labeldistance  =  "1.8"];
+label = "This is a test\n\n";
+m_Account [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Account</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="apps_number">apps_number <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+</table>
+>];
+m_AccountType [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">AccountType</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="account_type_name">account_type_name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="description">description <font face="Arial Italic" color="grey60">text ∗</font></td></tr>
+</table>
+>];
+"m_ActiveRecord::SessionStore::Session" [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">ActiveRecord::SessionStore::Session</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="data">data <font face="Arial Italic" color="grey60">text</font></td></tr>
+  <tr><td align="left" width="130" port="session_id">session_id <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+>];
+m_AddOn [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">AddOn</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="add_on_name">add_on_name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="cost">cost <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+  <tr><td align="left" width="130" port="description">description <font face="Arial Italic" color="grey60">text ∗</font></td></tr>
+</table>
+>];
+m_App [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">App</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="app_name">app_name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="app_status">app_status <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="available_for_download">available_for_download <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="cost">cost <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+  <tr><td align="left" width="130" port="custom_scaffolds_number">custom_scaffolds_number <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+  <tr><td align="left" width="130" port="custom_template">custom_template <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="domain_name">domain_name <font face="Arial Italic" color="grey60">string</font></td></tr>
+</table>
+>];
+m_AppAddOn [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">AppAddOn</font></td></tr>
+</table>
+>];
+m_AppTemplate [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">AppTemplate</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="boilerplate">boilerplate <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="bootstrap">bootstrap <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="cost">cost <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+  <tr><td align="left" width="130" port="createjs">createjs <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="description">description <font face="Arial Italic" color="grey60">text ∗</font></td></tr>
+  <tr><td align="left" width="130" port="foundation">foundation <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="kickstart">kickstart <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="less">less <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="montage">montage <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="rails">rails <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="skeleton">skeleton <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="sproutcore">sproutcore <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="template_name">template_name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="wordpress">wordpress <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="zebra">zebra <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+</table>
+>];
+m_ColumnAttribute [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">ColumnAttribute</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="association_type">association_type <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="column_description">column_description <font face="Arial Italic" color="grey60">text ∗</font></td></tr>
+  <tr><td align="left" width="130" port="column_name">column_name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="column_position">column_position <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+  <tr><td align="left" width="130" port="column_template">column_template <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="column_type">column_type <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="css_class">css_class <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="css_id">css_id <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="default_value">default_value <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="field_size">field_size <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+  <tr><td align="left" width="130" port="field_type">field_type <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="i18n_column_name">i18n_column_name <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="index_display">index_display <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="index_display_format">index_display_format <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="is_readonly">is_readonly <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="is_required">is_required <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="is_searchable">is_searchable <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="is_unique">is_unique <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="max_length">max_length <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+  <tr><td align="left" width="130" port="min_length">min_length <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+  <tr><td align="left" width="130" port="options_for_select">options_for_select <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="placeholder">placeholder <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="protected">protected <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="scope_validation">scope_validation <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="select_autocomplete">select_autocomplete <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="select_display">select_display <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="select_value">select_value <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="show_display">show_display <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="show_display_format">show_display_format <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="title">title <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="validates_with_scope">validates_with_scope <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="validation_type">validation_type <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+>];
+m_CustomScaffold [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">CustomScaffold</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="columns_number">columns_number <font face="Arial Italic" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="i18n_created_at">i18n_created_at <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="i18n_id">i18n_id <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="i18n_scaffold_name">i18n_scaffold_name <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="i18n_updated_at">i18n_updated_at <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="index_created_at">index_created_at <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="index_id">index_id <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="index_updated_at">index_updated_at <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="is_nested_model">is_nested_model <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="model_to_nest">model_to_nest <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="protected">protected <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="require_authentication">require_authentication <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="scaffold_name">scaffold_name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="show_created_at">show_created_at <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="show_id">show_id <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="show_updated_at">show_updated_at <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="system_scaffold">system_scaffold <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+</table>
+>];
+m_Permission [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Permission</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="custom_action">custom_action <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="custom_action_name">custom_action_name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="description">description <font face="Arial Italic" color="grey60">text ∗</font></td></tr>
+  <tr><td align="left" width="130" port="foreign_key">foreign_key <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="has_destroy">has_destroy <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="has_edit">has_edit <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="has_index">has_index <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="has_new">has_new <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="has_show">has_show <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="model">model <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="private">private <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="private_key">private_key <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="protected">protected <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="user_association">user_association <font face="Arial Italic" color="grey60">string</font></td></tr>
+</table>
+>];
+m_Role [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Role</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="administrator">administrator <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="custom">custom <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="default_user">default_user <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="description">description <font face="Arial Italic" color="grey60">text ∗</font></td></tr>
+  <tr><td align="left" width="130" port="guess">guess <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="protected">protected <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="superadmin">superadmin <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+</table>
+>];
+m_SchemaMigration [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">SchemaMigration</font></td></tr>
+</table>
+>];
+m_User [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">User</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="active">active <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="authentication_token">authentication_token <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="confirmation_sent_at">confirmation_sent_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="confirmation_token">confirmation_token <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="confirmed_at">confirmed_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="current_sign_in_at">current_sign_in_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="current_sign_in_ip">current_sign_in_ip <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="email">email <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="encrypted_password">encrypted_password <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="failed_attempts">failed_attempts <font face="Arial Italic" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="first_name">first_name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="last_name">last_name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="last_sign_in_at">last_sign_in_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="last_sign_in_ip">last_sign_in_ip <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="locked_at">locked_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="logo_content_type">logo_content_type <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="logo_file_name">logo_file_name <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="logo_file_size">logo_file_size <font face="Arial Italic" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="logo_updated_at">logo_updated_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="remember_created_at">remember_created_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_sent_at">reset_password_sent_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_token">reset_password_token <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="sign_in_count">sign_in_count <font face="Arial Italic" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="unconfirmed_email">unconfirmed_email <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="unlock_token">unlock_token <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="username">username <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+>];
+  m_Role -> m_User [arrowsize = "0.6", arrowhead = "dot", arrowtail = "odot", weight = "2"];
+  m_User -> m_Account [arrowsize = "0.6", arrowhead = "odot", arrowtail = "odot", weight = "2"];
+  m_Account -> m_App [arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "2"];
+  m_AppTemplate -> m_App [arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "2"];
+  m_App -> m_CustomScaffold [arrowsize = "0.6", arrowhead = "dotnormal", arrowtail = "odot", weight = "2"];
+  m_App -> m_ColumnAttribute [style = "dotted", arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "1", constraint = "false"];
+  m_AccountType -> m_Account [arrowsize = "0.6", arrowhead = "odot", arrowtail = "odot", weight = "2"];
+  m_Account -> m_CustomScaffold [style = "dotted", arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "1", constraint = "false"];
+  m_Account -> m_ColumnAttribute [style = "dotted", arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "1", constraint = "false"];
+  m_AddOn -> m_AppAddOn [arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "2"];
+  m_AddOn -> m_App [style = "dotted", arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "1", constraint = "false"];
+  m_App -> m_AppAddOn [arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "1"];
+  m_CustomScaffold -> m_ColumnAttribute [arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "dot", weight = "2"];
+  m_Role -> m_Permission [arrowsize = "0.6", arrowhead = "dotnormal", arrowtail = "odotnormal", weight = "2"];
+}

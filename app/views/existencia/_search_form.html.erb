@@ -1,0 +1,67 @@
+<%= form_tag existencia_path, :method => "get", :id => "advanced-search-form"  do %>
+<div class="modal-body" >
+  <div  id="search-options" class="full-width">
+    <%= select_tag(:search_by_or_and, options_for_select([[t("partials.search_options.or"), "OR"], [t("partials.search_options.and"), "AND"]], params[:search_by_or_and]), {:prompt => t('partials.search_options.search_by_or_and'), :style =>"margin-bottom: -5px; width: auto;"})%>
+    <%= select_tag(:search_by, options_for_select([[t("partials.search_options.like"), false], [t("partials.search_options.equal"), true]], params[:search_by]), {:prompt => t('partials.search_options.search_by'), :style =>"margin-bottom: -5px; width: auto;"})%>           
+    <%= select_tag(:order_by, options_for_select(@indexable_columns, params[:order_by]), {:prompt => t('partials.search_options.order_by'), :style =>"width: auto;"})%> 
+    <%= select_tag(:sort_by, options_for_select([[t("partials.search_options.asc"), "ASC"], [t("partials.search_options.desc"), "DESC"]], params[:sort_by]), {:prompt => t('partials.search_options.sort_by'), :style =>"margin-bottom: -5px; width: auto;"})%>   
+    <%= select_tag(:per_page, options_for_select([10,20,30,40,50,60,70,80,90,100, [t('partials.search_options.all_records'), eval("@#{controller_name}.count")]], params[:per_page].to_i), {:prompt => t('partials.search_options.select_page_numbers'), :style =>"width: auto;"})%>    
+    <%= hidden_field_tag :controller_name, :controller_name, :value => controller_name, :read_only => true %>
+  </div>
+  <div class="left-custom-column">
+    
+      
+      <div class="field">
+        <%= label_tag t('existencia.show.id') %>
+<%= number_field_tag :id, params[:id], placeholder: t('layouts.application.required'), i18n_name: t('existencia.index.id'), style: 'width: 40px;', validation_type: 'number', title: t('existencia.index.id') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('existencia.show.IdExistencia') %>
+<%= number_field_tag :IdExistencia, params[:IdExistencia], placeholder: t('layouts.application.required'), i18n_name: t('existencia.index.IdExistencia'), style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('existencia.index.IdExistencia') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('existencia.show.IdArticulo') %>
+<%= number_field_tag :IdArticulo, params[:IdArticulo], placeholder: t('layouts.application.required'), i18n_name: t('existencia.index.IdArticulo'), style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('existencia.index.IdArticulo') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('existencia.show.IdAlmacen') %>
+<%= number_field_tag :IdAlmacen, params[:IdAlmacen], placeholder: t('layouts.application.required'), i18n_name: t('existencia.index.IdAlmacen'), style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('existencia.index.IdAlmacen') %>
+      </div>
+    
+  </div>
+  <div class="right-custom-column">
+    
+      
+      <div class="field">
+        <%= label_tag t('existencia.show.Cantidad') %>
+<%= number_field_tag :Cantidad, params[:Cantidad], placeholder: t('layouts.application.not_required'), i18n_name: t('existencia.index.Cantidad'), style: 'width: 200px;', validation_type: 'number', class: 'form-control', title: t('existencia.index.Cantidad') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('existencia.show.Fecha') %>
+<%= text_field_tag :Fecha, params[:Fecha], placeholder: t('layouts.application.not_required'), i18n_name: t('existencia.index.Fecha'), style: 'width: 200px;', validation_type: 'date', class: 'form-control', title: t('existencia.index.Fecha') %>
+      </div>
+    
+      
+      <div class="field">
+        <%= label_tag t('existencia.show.FechaCad') %>
+<%= text_field_tag :FechaCad, params[:FechaCad], placeholder: t('layouts.application.not_required'), i18n_name: t('existencia.index.FechaCad'), style: 'width: 200px;', validation_type: 'date', class: 'form-control', title: t('existencia.index.FechaCad') %>
+      </div>
+    
+  </div>
+</div>
+<div class="modal-footer">
+  <%=link_to  "#", title: t("layouts.application.form_reset"), onclick: "formReset($('#advanced-search-form'));", :class => 'btn btn-sm btn-default' do%>
+  <i class="icon-refresh"></i>
+  <%end%>
+  <button type="button" class="btn btn-default" data-dismiss="modal"><%=t(:cancel)%></button>
+  <%= submit_tag t("actions.search",  model: t("activerecord.models.#{controller_name}").titlecase), data: {disable_with: t("actions.searching",  model: t("activerecord.models.#{controller_name}").titlecase)}, :class => "btn btn-sm btn-primary", title: t("actions.search",  model: t("activerecord.models.#{controller_name}").titlecase) %> 
+</div>
+<% end %>

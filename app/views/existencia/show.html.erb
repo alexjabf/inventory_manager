@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="list-group">
+                                    <% unless @existencium.IdExistencia.blank? %>
+            <li class="list-group-item ">
+              <b><%= t'.IdExistencia' %></b> <%= number_with_delimiter(@existencium.IdExistencia, locale: session[:locale]) %>
+            </li>
+            <% end %>
+                                                      <% unless @existencium.IdArticulo.blank? %>
+            <li class="list-group-item ">
+              <b><%= t'.IdArticulo' %></b> <%= number_with_delimiter(@existencium.IdArticulo, locale: session[:locale]) %>
+            </li>
+            <% end %>
+                                                      <% unless @existencium.IdAlmacen.blank? %>
+            <li class="list-group-item ">
+              <b><%= t'.IdAlmacen' %></b> <%= number_with_delimiter(@existencium.IdAlmacen, locale: session[:locale]) %>
+            </li>
+            <% end %>
+                            </ul>
+  </div>
+</div>
+
+<!--HERE GOES NESTED INDEX-->

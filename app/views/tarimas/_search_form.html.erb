@@ -1,0 +1,46 @@
+<%= form_tag familia_path, :method => "get", :id => "advanced-search-form"  do %>
+  <div class="modal-body" >
+    <div  id="search-options" class="full-width">
+      <%= select_tag(:search_by_or_and, options_for_select([[t("partials.search_options.or"), "OR"], [t("partials.search_options.and"), "AND"]], params[:search_by_or_and]), {:prompt => t('partials.search_options.search_by_or_and'), :style =>"margin-bottom: -5px; width: auto;"})%>
+      <%= select_tag(:search_by, options_for_select([[t("partials.search_options.like"), false], [t("partials.search_options.equal"), true]], params[:search_by]), {:prompt => t('partials.search_options.search_by'), :style =>"margin-bottom: -5px; width: auto;"})%>           
+      <%= select_tag(:order_by, options_for_select(@indexable_columns, params[:order_by]), {:prompt => t('partials.search_options.order_by'), :style =>"width: auto;"})%> 
+      <%= select_tag(:sort_by, options_for_select([[t("partials.search_options.asc"), "ASC"], [t("partials.search_options.desc"), "DESC"]], params[:sort_by]), {:prompt => t('partials.search_options.sort_by'), :style =>"margin-bottom: -5px; width: auto;"})%>   
+      <%= select_tag(:per_page, options_for_select([10,20,30,40,50,60,70,80,90,100, [t('partials.search_options.all_records'), eval("@#{controller_name}.count")]], params[:per_page].to_i), {:prompt => t('partials.search_options.select_page_numbers'), :style =>"width: auto;"})%>    
+      <%= hidden_field_tag :controller_name, :controller_name, :value => controller_name, :read_only => true %>
+    </div>
+
+    <div class="field">
+      <%= label_tag t('familia.show.idTarima') %>
+      <%= number_field_tag :idTarima, params[:idTarima], placeholder: t('layouts.application.required'), i18n_name: t('familia.index.idTarima'), style: 'width: 200px;', validation_type: 'number', :class => 'form-control', title: t('familia.index.idTarima') %>
+    </div>
+
+
+
+    <div class="field">
+      <%= label_tag t('familia.show.CodigoTarima') %>
+      <%= text_field_tag :CodigoTarima, params[:CodigoTarima], placeholder: t('layouts.application.not_required'), i18n_name: t('familia.index.CodigoTarima'), style: 'width: 200px;', validation_type: 'text', :class => 'form-control', title: t('familia.index.CodigoTarima') %>
+    </div>
+
+
+    <div class="field">
+      <%= label_tag t('familia.show.Fecha') %>
+      <%= text_field_tag :Fecha, params[:Fecha], placeholder: t('layouts.application.not_required'), i18n_name: t('familia.index.Fecha'), style: 'width: 400px;', validation_type: 'text', :class => 'form-control', title: t('familia.index.Fecha') %>
+    </div>
+
+    <div class="field">
+      <%= label_tag t('articulos.show.Activo') %>
+      <%= check_box_tag :Activo, params[:Activo], i18n_name: t('articulos.index.Activo'), checked: false, validation_type: 'boolean', :class => 'form-control', title: t('articulos.index.Activo') %>
+    </div>
+
+  </div>
+
+
+  <div class="modal-footer">
+    <%=link_to  "#", title: t("layouts.application.form_reset"), onclick: "formReset($('#advanced-search-form'));", :class => 'btn btn-sm btn-default' do%>
+      <i class="icon-refresh"></i>
+    <%end%>
+    <button type="button" class="btn btn-default" data-dismiss="modal"><%=t(:cancel)%></button>
+    <%= submit_tag t("actions.search",  model: t("activerecord.models.#{controller_name}").titlecase), data: {disable_with: t("actions.searching",  model: t("activerecord.models.#{controller_name}").titlecase)}, :class => "btn btn-sm btn-primary", title: t("actions.search",  model: t("activerecord.models.#{controller_name}").titlecase) %> 
+    </div>
+  <% end %>
+

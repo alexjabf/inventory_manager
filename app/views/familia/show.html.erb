@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="list-group">
+      <% unless @familium.idFamilia.blank? %>
+        <li class="list-group-item active">
+          <b><%= t'.idFamilia' %></b> <%= number_with_delimiter(@familium.idFamilia, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @familium.FamClave.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.FamClave' %></b> <%= @familium.FamClave %>
+        </li>
+      <% end %>
+      <% unless @familium.FamDescripcion.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.FamDescripcion' %></b> <%= @familium.FamDescripcion %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!--HERE GOES NESTED INDEX-->

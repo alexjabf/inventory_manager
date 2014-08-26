@@ -1,0 +1,30 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%=t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}"))%></h3>
+  </div>
+  <div class="panel-body"> 
+    <%= form_for(@tarima) do |f| %>
+      <%= render "partials/form_errors" %>
+      <div class="field">
+        <%#= f.label :idTarima %>
+        <%= f.hidden_field :idTarima, i18n_name: t('tarimas.index.idTarima'), validation_type: 'boolean', title: t('tarimas.index.idTarima'), readonly: true %>
+      </div>
+      <div class="field">
+        <%#= f.label :CodigoTarima %>
+        <%= f.hidden_field :CodigoTarima, i18n_name: t('tarimas.index.CodigoTarima'), validation_type: 'boolean', title: t('tarimas.index.CodigoTarima'), readonly: true %>
+      </div>
+      <div class="field">
+        <%#= f.label :Fecha %>
+        <%= f.hidden_field :Fecha, i18n_name: t('tarimas.index.Fecha'), validation_type: 'boolean', title: t('tarimas.index.Fecha'), readonly: true %>
+      </div>
+      <div class="field">
+        <%= f.label :Activa %>
+        <%= f.check_box :Activa, i18n_name: t('tarimas.index.Activa'), validation_type: 'boolean', title: t('tarimas.index.Activa') %>
+      </div>
+      <br>
+      <div class='actions'>
+        <%= f.submit data: {disable_with: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :class => "btn btn-sm btn-primary", title: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase) %>  
+      </div>
+    <% end %>
+  </div>
+</div>
