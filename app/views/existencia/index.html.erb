@@ -1,3 +1,4 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <%quantity = []%>
 <% x= 0 %>
 <% @top_ten.each do |existencium| %>
@@ -117,7 +118,7 @@
   <table class="table table-bordered table-hover table-striped">
     <thead>
       <tr>
-        <th><%= t('layouts.application.actions') %></th>
+        <!--th><%#= t('layouts.application.actions') %></th!-->
         <th><%= t'.id' %></th>
         <th><%= t'.IdExistencia' %></th>
         <th><%= t'.IdArticulo' %></th>
@@ -135,7 +136,7 @@
         <% @model = existencium %> 
 
         <tr>
-          <td><%= render "partials/index_links" %></td>
+          <!--td><%#= render "partials/index_links" %></td!-->
           <%if can? :show, Existencium %>
             <td><%=link_to existencium.id, existencium, :class => "btn btn-xs btn-primary" %></td>
           <%else%>
