@@ -9,6 +9,6 @@ class CreateAlmacenes < ActiveRecord::Migration
       t.string :nombre
       t.string :TipoAlmacen
     end
-    execute %Q{ ALTER TABLE "almacenes" ADD PRIMARY KEY ("IdAlmacen"); }
+#    execute %Q{ ALTER TABLE "almacenes" ADD PRIMARY KEY ("IdAlmacen"); }
   end
 end

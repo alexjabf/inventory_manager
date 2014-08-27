@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
-  include DevelopmentToolsHelper
-  include GlobalHelper   
+#  include DevelopmentToolsHelper
+#  include GlobalHelper   
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_filter :get_user_status, :set_locale, :get_style, :get_models_for_sidebar, :set_faye_url
+  before_filter :set_locale, :get_style, :get_models_for_sidebar, :set_faye_url
   before_filter :get_searchable_columns, :get_indexable_columns, :has_sorting_params, :only => [:index]
   
   def set_faye_url
@@ -54,13 +54,4 @@ class ApplicationController < ActionController::Base
     get_indexable_columns_names if is_model?(controller_name)
   end
   
-  def get_user_status
-    if signed_in?
-      @app = App.find(2)
-      unless current_user.active or !@app.nil?
-        sign_out(current_user)
-        redirect_to root_path, :alert => t("errors.messages.account_inactive")
-      end
-    end
-  end
 end

@@ -11,7 +11,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Rails To Go : " + t("activerecord.models.#{controller_name}")%></title>
     <%= stylesheet_link_tag "bootstrap", "bootstrap.min", "sb-admin", "font-awesome-4.1.0/css/font-awesome", "font-awesome-4.1.0/css/font-awesome.min", :media => "all" %>
-    <%= render "partials/javascript" %>  
+    <%#= render "partials/javascript" %>  
     <%= javascript_include_tag "application", "#{session[:faye_url]}.js" %>
     <%= csrf_meta_tags %>
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -126,7 +126,7 @@
 <%#end%>
                   <p>Please enable JavaScript in your browser to continue.</p>
                   </noscript>
-                  <%= render "partials/search_options" if show_quick_search_form? %>
+                  <%#= render "partials/search_options" if show_quick_search_form? %>
 <%# if has_custom_scaffold %>
 <%#= render "partials/#{@view_type}" %>
 <%# else %>
@@ -175,6 +175,6 @@
       <script src="/assets/plugins/morris/raphael.min.js"></script>
       <script src="/assets/plugins/morris/morris.min.js"></script>
       <script src="/assets/plugins/morris/morris-data.js"></script>
-      <%= render "partials/modals" %>
+      <%#= render "partials/modals" %>
   </body>
 </html>

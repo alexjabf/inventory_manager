@@ -9,6 +9,6 @@ class CreateFamilia < ActiveRecord::Migration
       t.string :FamClave
       t.text :FamDescripcion
     end
-    execute %Q{ ALTER TABLE "familia" ADD PRIMARY KEY ("idFamilia"); }
+#    execute %Q{ ALTER TABLE "familia" ADD PRIMARY KEY ("idFamilia"); }
   end
 end

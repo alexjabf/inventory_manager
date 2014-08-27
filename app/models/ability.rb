@@ -15,13 +15,13 @@ class Ability
         can :manage, Articulo
         can :manage, Almacene
         can :manage, Familium
-        can :manage, SchemaMigration
-        can :manage, AccountType
-        can :manage, Account
-        can :manage, AddOn
-        can :manage, App
-        can :manage, CustomScaffold
-        can :manage, ColumnAttribute
+        #can :manage, SchemaMigration
+        #can :manage, AccountType
+        #can :manage, Account
+        #can :manage, AddOn
+        #can :manage, App
+        #can :manage, CustomScaffold
+        #can :manage, ColumnAttribute
         #        can [:show, :edit, :update, :index], User, :id => user.id
         #        can [:show, :index], Role, :id => user.role.id 
         #        can [:show, :index], Familium
