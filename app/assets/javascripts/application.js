@@ -15,7 +15,6 @@
 //= require jquery-1.9.1
 //= require jquery.tablesorter
 //= require jquery_ujs
-//= require jquery.ui.all
 //= require avatars_for_rails
 //= require jquery_nested_form
 //= require autocomplete-rails
@@ -27,7 +26,4 @@
 //= require modernizr-2.7.1.dev
 //= require prefixfree.min
 //= require custom
-//= require jquery.mobile-1.4.3
-//= require jquery.mobile-1.4.3.min
-//= require jquery
-//= require jquery_ujs
+//= require jquery.mobile

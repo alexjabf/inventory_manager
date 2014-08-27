@@ -1,0 +1,18 @@
+<div data-role="header">
+  <h1>Listing Users</h1>
+</div>
+<div data-role="content">
+  <ul data-role="listview">
+    <% User.all.each do |user| %>
+      <li>
+        <%= link_to note do %>
+          <h1><%= user.first_name %></h1>
+          <%= truncate user.last_name, :length => 2 %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div data-role="footer">
+  <%= link_to 'New User', new_user_path %>
+</div>
