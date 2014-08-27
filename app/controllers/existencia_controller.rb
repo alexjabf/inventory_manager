@@ -9,6 +9,12 @@ class ExistenciaController < ApplicationController
     @existencia = Existencium.where(:IdAlmacen => 10 ).paginate(:page => params[:page], :per_page => 20).order('Cantidad DESC')
     @top_ten = Existencium.where(:IdAlmacen => 10 ).order("Cantidad DESC")
     #@sebo = Existencium.find_by_IdArticulo("112")
+    x= 0
+    @quantity = []
+    @top_ten.each do |existencium|
+      @quantity[x] = [existencium.Cantidad, Articulo.find_by_idArticulo(existencium.IdArticulo).Descripcion.titlecase]
+      x = x + 1
+    end
   end
 
   # GET /existencia/1
