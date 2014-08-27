@@ -1,13 +1,8 @@
 <div class="row">
   <div class="col-lg-12">
     <ul class="list-group">
-      <% unless @corte.id.blank? %>
-        <li class="list-group-item ">
-          <b><%= t'.id' %></b> <%= @corte.id %>
-        </li>
-      <% end %>
-      <% unless @corte.IDcorte.blank? %>
-        <li class="list-group-item ">
+      <% unless @corte.IDcorte.blank?%>
+        <li class="list-group-item active">
           <b><%= t'.IDcorte' %></b> <%= number_with_delimiter(@corte.IDcorte, locale: session[:locale]) %>
         </li>
       <% end %>
@@ -44,6 +39,36 @@
       <% unless @corte.eliminado.blank? %>
         <li class="list-group-item ">
           <b><%= t'.eliminado' %></b> <%= t(@corte.eliminado.to_s) %>
+        </li>
+      <% end %>
+      <% unless @corte.vendido.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.vendido' %></b> <%= t(@corte.vendido.to_s) %>
+        </li>
+      <% end %>
+      <% unless @corte.agregado.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.agregado' %></b> <%= @corte.agregado %>
+        </li>
+      <% end %>
+      <% unless @corte.Estatus.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Estatus' %></b> <%= @corte.Estatus %>
+        </li>
+      <% end %>
+      <% unless @corte.Inventariado.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Inventariado' %></b> <%= t(@corte.Inventariado.to_s) %>
+        </li>
+      <% end %>
+      <% unless @corte.Consecutivo.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Consecutivo' %></b> <%= @corte.Consecutivo %>
+        </li>
+      <% end %>
+      <% unless @corte.Caducidad.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Caducidad' %></b> <%=  I18n.l @corte.Caducidad, :format => :long %>
         </li>
       <% end %>
     </ul>

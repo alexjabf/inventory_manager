@@ -2,8 +2,7 @@
   <table class="table table-bordered table-hover table-striped">
     <thead>
       <tr>
-        <th><%= t('layouts.application.actions') %></th>
-        <th><%= t'.id' %></th>
+        <th><%= t'.idFamilia' %></th>
         <th><%= t'.FamClave' %></th>
         <th><%= t'.FamDescripcion' %></th>
       </tr>
@@ -16,11 +15,10 @@
         <% @model = familium %> 
 
         <tr>
-          <td><%= render "partials/index_links" %></td>
           <%if can? :show, Familium %>
-            <td><%=link_to familium.id, familium, :class => "btn btn-xs btn-primary" %></td>
+            <td><%=link_to familium.idFamilia, familium, :class => "btn btn-xs btn-primary" %></td>
           <%else%>
-            <td><%= label familium.id, familium.id, :class => "btn btn-xs btn-default", :disabled => true%></td>
+            <td><%= label familium.idFamilia, familium.idFamilia, :class => "btn btn-xs btn-default", :disabled => true%></td>
           <%end%>
           <td><%= familium.FamClave %></td>
           <td><%= familium.FamDescripcion %></td>

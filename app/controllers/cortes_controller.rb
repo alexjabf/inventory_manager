@@ -6,6 +6,7 @@ class CortesController < ApplicationController
 
   # GET /cortes
   def index
+        @cortes = Corte.paginate(:page => params[:page], :per_page => 20).order('Caducidad DESC')
   end
 
   # GET /cortes/1

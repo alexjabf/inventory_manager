@@ -279,13 +279,6 @@ es:
       templates: Templates
       template: Template
       development_tools: Development Tools
-      articles: Articles
-      article: Article
-      familias: Familias
-  apps:
-    index:
-      created_at: Create!D At
-      create!d_at: Create!D At
   es:
     users:
       id: Id
@@ -321,52 +314,3 @@ es:
       zebra: Zebra
       less: Less
       createjs: Createjs
-  roles:
-    index:
-      domain: Domain
-      default_user: Default User
-      custom: Custom
-  articles:
-    index:
-      id: Id
-      name: Name
-      created_at: Created At
-      updated_at: Updated At
-    show:
-      id: Id
-      name: Name
-  record:
-    models:
-      role: Role
-  familias:
-    index:
-      id: Id
-      famclave: Famclave
-      descripcion: Descripcion
-      created_at: Created At
-      updated_at: Updated At
-  articulos:
-    index:
-      Descripcion: Descripcion
-      Activa: Activa
-  cortes:
-    index:
-      fecha: Fecha
-      idArticulo: IdArticulo
-    show:
-      idArticulo: IdArticulo
-  S: S
-  N: N
-  X: X
-  familia:
-    show:
-      idTarima: IdTarima
-      CodigoTarima: CodigoTarima
-      Fecha: Fecha
-    index:
-      idTarima: IdTarima
-      CodigoTarima: CodigoTarima
-      Fecha: Fecha
-  existencia:
-    index:
-      Lote: Lote

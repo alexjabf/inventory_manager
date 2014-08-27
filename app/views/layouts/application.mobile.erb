@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "eMeteal Control Mobile Edition: " + t("activerecord.models.#{controller_name}")%></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <%= javascript_include_tag :application %>  
+    <%= yield :pre_mobile_load %>
+    <%#= javascript_include_tag "jquery.mobile-1.4.3.min" %>
+    <%= javascript_include_tag "jquery.mobile-1.4.3" %>
+    <%= stylesheet_link_tag    "jquery.mobile-1.4.3"%> 
+    <%= stylesheet_link_tag    "jquery.mobile.external-png-1.4.3"%>   
+    <%#= stylesheet_link_tag    "jquery.mobile.external-png-1.4.3.min"%> 
+    <%= stylesheet_link_tag    "jquery.mobile.icons-1.4.3"%>
+    <%#= stylesheet_link_tag    "jquery.mobile.icons-1.4.3.min"%>
+    <%= stylesheet_link_tag    "jquery.mobile.inline-png-1.4.3"%>
+    <%#= stylesheet_link_tag    "jquery.mobile.inline-png-1.4.3.min"%>
+    <%= stylesheet_link_tag    "jquery.mobile.inline-svg-1.4.3"%>
+    <%#= stylesheet_link_tag    "jquery.mobile.inline-svg-1.4.3.min"%>
+    <%= stylesheet_link_tag    "jquery.mobile.structure-1.4.3"%>
+    <%#= stylesheet_link_tag    "jquery.mobile.structure-1.4.3.min"%>
+    <%= stylesheet_link_tag    "jquery.mobile.theme-1.4.3"%>
+    <%#= stylesheet_link_tag    "jquery.mobile.theme-1.4.3.min"%>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body >
+
+    <div data-role="page" data-theme="a" >
+      <div data-role="header" data-position="fixed">
+        <h1 title="Chihuahua en Línea.">eMeteal Control Mobile Edition</h1>
+        <%=link_to t(:home), root_path, :"data-icon"=>"home", :"data-iconpos"=>"notext", :"data-direction"=>"reverse", :rel=>"external"%>
+      </div>
+      <!--%=image_tag("/assets/logo3.png", :id=>"mainheader")%-->
+
+      <div data-role="navbar" >
+        <ul>
+          <%if signed_in?%>
+            <li><%=link_to current_user.fullname.titlecase, current_user, :"data-icon"=>"user-icon", :rel=>"external", :title=>"Detalles de mi cuenta."%></li>
+            <li><%= link_to t(:logout) + ' ' + current_user.username, destroy_user_session_path, :"data-icon"=>"power", :rel=>"external", :title => "Cerrar sesión del usuario " + t(:logout)%></li>
+          <%else%>
+            <li><%=link_to t(:login), new_user_session_path, :"data-icon"=>"person", :rel=>"external", title: t(:login)%></li>           
+          <%end%>
+        </ul>
+      </div>
+
+
+      <div id="mobile-container" data-role="content">
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>
+        <%= yield %>
+      </div>
+
+
+      <div data-role="footer" data-id="foo1">
+        <div data-role="navbar">
+          <ul>
+            <li> </li>
+            <li><a href="c.html">&copy; Powered by eMobile 2014</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>        
+  </body>
+</html>
+
+
+
+
+
+

@@ -1,22 +1,47 @@
 <div class="row">
   <div class="col-lg-12">
     <ul class="list-group">
-                                    <% unless @existencium.IdExistencia.blank? %>
-            <li class="list-group-item ">
-              <b><%= t'.IdExistencia' %></b> <%= number_with_delimiter(@existencium.IdExistencia, locale: session[:locale]) %>
-            </li>
-            <% end %>
-                                                      <% unless @existencium.IdArticulo.blank? %>
-            <li class="list-group-item ">
-              <b><%= t'.IdArticulo' %></b> <%= number_with_delimiter(@existencium.IdArticulo, locale: session[:locale]) %>
-            </li>
-            <% end %>
-                                                      <% unless @existencium.IdAlmacen.blank? %>
-            <li class="list-group-item ">
-              <b><%= t'.IdAlmacen' %></b> <%= number_with_delimiter(@existencium.IdAlmacen, locale: session[:locale]) %>
-            </li>
-            <% end %>
-                            </ul>
+      <% unless @existencium.IdExistencia.blank? %>
+        <li class="list-group-item active">
+          <b><%= t'.IdExistencia' %></b> <%= number_with_delimiter(@existencium.IdExistencia, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @existencium.IdArticulo.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.IdArticulo' %></b> <%= number_with_delimiter(@existencium.IdArticulo, locale: session[:locale]).to_s + " (" + Articulo.find_by_idArticulo(@existencium.IdArticulo).Descripcion + ")"  %>
+        </li>
+      <% end %>
+      <% unless @existencium.IdAlmacen.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.IdAlmacen' %></b> <%= number_with_delimiter(@existencium.IdAlmacen, locale: session[:locale]).to_s + " (" + Almacene.find(@existencium.IdAlmacen).Nombre + ")"  %>
+        </li>
+      <% end %>
+        
+              <% unless @existencium.Cantidad.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Cantidad' %></b> <%= @existencium.Cantidad %>
+        </li>
+      <% end %>
+
+      <% unless @existencium.Lote.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Lote' %></b> <%= @existencium.Lote %>
+        </li>
+      <% end %>
+
+      <% unless @existencium.Fecha.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.Fecha' %></b> <%= I18n.l @existencium.Fecha, :format => :long %>
+        </li>
+      <% end %>
+
+      <% unless @existencium.FechaCad.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.FechaCad' %></b> <%= I18n.l @existencium.FechaCad, :format => :long %>
+        </li>
+      <% end %>
+
+    </ul>
   </div>
 </div>
 
