@@ -1,14 +1,14 @@
 <%quantity = []%>
-<% x= 0 %>
-<% @top_ten.each do |existencium| %>
-  <%if existencium.IdArticulo == 108%>
+<%# x= 0 %>
+<% #@top_ten.each do |existencium| %>
+  <%#if existencium.IdArticulo == 108%>
     <%# quantity[x] = [existencium.Cantidad  + @sebo.Cantidad.to_i, "Merma"] %>
-  <%else%>
-    <% quantity[x] = [existencium.Cantidad, Articulo.find_by_idArticulo(existencium.IdArticulo).Descripcion.titlecase]%>
-  <%end%>
-  <%x = x + 1%>
-<%end%>
-<% quantity = quantity.sort_by{|k|-k[0]}%>
+  <%#else%>
+    <%#= @quantity[x] = [existencium.Cantidad, Articulo.find_by_idArticulo(existencium.IdArticulo).Descripcion.titlecase]%>
+  <%#end%>
+  <%#x = x + 1%>
+<%#end%>
+<% quantity = @quantity.sort_by{|k|-k[0]}%>
 <%# quantity = quantity.sort{|a,b| b[0] <=> a[0]}%>
 
 <script type="text/javascript">
