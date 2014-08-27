@@ -26,4 +26,3 @@
 //= require jquery.inspect
 //= require modernizr-2.7.1.dev
 //= require prefixfree.min
-//= require custom
