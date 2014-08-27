@@ -6,6 +6,7 @@ class FamiliaController < ApplicationController
 
   # GET /familia
   def index
+    @familia = Familium.paginate(:page => params[:page], :per_page => 20).order('idFamilia DESC')
   end
 
   # GET /familia/1

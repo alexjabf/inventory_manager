@@ -1,13 +1,8 @@
 <div class="row">
   <div class="col-lg-12">
     <ul class="list-group">
-      <% unless @lotecanal.id.blank? %>
-        <li class="list-group-item ">
-          <b><%= t'.id' %></b> <%= @lotecanal.id %>
-        </li>
-      <% end %>
       <% unless @lotecanal.IDlote.blank? %>
-        <li class="list-group-item ">
+        <li class="list-group-item active">
           <b><%= t'.IDlote' %></b> <%= number_with_delimiter(@lotecanal.IDlote, locale: session[:locale]) %>
         </li>
       <% end %>
@@ -46,9 +41,29 @@
           <b><%= t'.manoObra' %></b> <%= number_with_delimiter(@lotecanal.manoObra, locale: session[:locale]) %>
         </li>
       <% end %>
-      <% unless @lotecanal.descripcion.blank? %>
+      <% unless @lotecanal.numfactura.blank? %>
         <li class="list-group-item ">
-          <b><%= t'.descripcion' %></b> <%= @lotecanal.descripcion %>
+          <b><%= t'.numfactura' %></b> <%= number_with_delimiter(@lotecanal.numfactura, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.sebo.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.sebo' %></b> <%= number_with_delimiter(@lotecanal.sebo, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.hueso.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.hueso' %></b> <%= number_with_delimiter(@lotecanal.hueso, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.aserrin.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.aserrin' %></b> <%= number_with_delimiter(@lotecanal.aserrin, locale: session[:locale]) %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.consecutivo.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.consecutivo' %></b> <%= number_with_delimiter(@lotecanal.consecutivo, locale: session[:locale]) %>
         </li>
       <% end %>
       <% unless @lotecanal.estado.blank? %>
@@ -56,9 +71,25 @@
           <b><%= t'.estado' %></b> <%= @lotecanal.estado%>
         </li>
       <% end %>
+      <% unless @lotecanal.fecha.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.fecha' %></b> <%=  I18n.l @lotecanal.fecha, :format => :long %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.cierrefecha.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.cierrefecha' %></b> <%=  I18n.l @lotecanal.cierrefecha, :format => :long %>
+        </li>
+      <% end %>
+      <% unless @lotecanal.descripcion.blank? %>
+        <li class="list-group-item ">
+          <b><%= t'.descripcion' %></b> <%= @lotecanal.descripcion %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
+
 <%if current_user.role_id == 1 or current_user.role_id == 2%>
   <%= form_for @lotecanal, :html => { :class => 'form-horizontal' } do |f| %>
     <%if @lotecanal.estado == "Cerrado"%>
@@ -73,9 +104,9 @@
         <%= f.hidden_field :estado, :class => 'text_field', :value => state %>
       </div>
     </div>
-      <div class="form-actions">
-        <%= f.submit button_state, :class => 'btn btn-primary' %>
-      </div>
+    <div class="form-actions">
+      <%= f.submit button_state, :class => 'btn btn-primary' %>
+    </div>
   <% end %>
 <%end%>
 <br><br>

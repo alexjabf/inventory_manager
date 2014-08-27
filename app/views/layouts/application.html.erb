@@ -9,10 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><%= content_for?(:title) ? yield(:title) : "Rails To Go : " + t("activerecord.models.#{controller_name}")%></title>
+    <title><%= content_for?(:title) ? yield(:title) : "eMeteal Control Web Edition: " + t("activerecord.models.#{controller_name}")%></title>
     <%= stylesheet_link_tag "bootstrap", "bootstrap.min", "sb-admin", "font-awesome-4.1.0/css/font-awesome", "font-awesome-4.1.0/css/font-awesome.min", :media => "all" %>
     <%#= render "partials/javascript" %>  
     <%= javascript_include_tag "application", "#{session[:faye_url]}.js" %>
+    
+      <!-- jQuery Version 1.11.0 -->
+      <script src="/assets/jquery-1.11.0.js"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src="/assets/bootstrap.min.js"></script>
     <%= csrf_meta_tags %>
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -171,10 +177,6 @@
       <!-- Bootstrap Core JavaScript -->
       <script src="/assets/bootstrap.min.js"></script>
 
-      <!-- Morris Charts JavaScript -->
-      <script src="/assets/plugins/morris/raphael.min.js"></script>
-      <script src="/assets/plugins/morris/morris.min.js"></script>
-      <script src="/assets/plugins/morris/morris-data.js"></script>
-      <%#= render "partials/modals" %>
+     <%#= render "partials/modals" %>
   </body>
 </html>

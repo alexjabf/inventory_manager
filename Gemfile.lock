@@ -116,6 +116,8 @@ GEM
       turbolinks
     jquery-ui-rails (4.2.0)
       railties (>= 3.2.16)
+    jquery_mobile_rails (1.2.0)
+      rails (>= 3.1.0)
     json (1.8.1)
     libv8 (3.16.14.3)
     mail (2.5.4)
@@ -248,6 +250,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails
+  jquery_mobile_rails
   mysql2
   nested_form
   nprogress-rails

@@ -4,7 +4,7 @@ class Almacene < ActiveRecord::Base
   self.primary_key= "IdAlmacen"
 
   #ASSOCIATIONS
-
+  #has_many :Existencium, :foreign_key => :IdAlmacen, :primary_key => :IdExistencia
   #NESTED ATTRIBUTES
 
   #VALIDATIONS

@@ -3,7 +3,7 @@ class Existencium < ActiveRecord::Base
   self.table_name = "Existencia"
   self.primary_key= "IdExistencia"
   #ASSOCIATIONS
-
+  #belongs_to :Almacene, :foreign_key => :IdExistencia, :primary_key => :IdAlmacen
   #NESTED ATTRIBUTES
 
   #VALIDATIONS
@@ -15,7 +15,7 @@ class Existencium < ActiveRecord::Base
   EXISTENCIUM_CANTIDAD = /^[0-9]+$/
   EXISTENCIUM_FECHA = /^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.](19|20)\d\d$/
   EXISTENCIUM_FECHACAD = /^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.](19|20)\d\d$/
-    validates :IdExistencia, format: { with: EXISTENCIUM_IDEXISTENCIA, multiline: true }, length: { within: 1..10 }
+  validates :IdExistencia, format: { with: EXISTENCIUM_IDEXISTENCIA, multiline: true }, length: { within: 1..10 }
   validates :IdArticulo, format: { with: EXISTENCIUM_IDARTICULO, multiline: true }, length: { within: 1..10 }
   validates :IdAlmacen, format: { with: EXISTENCIUM_IDALMACEN, multiline: true }, length: { within: 1..10 }
   validates :Cantidad, format: { with: EXISTENCIUM_CANTIDAD, multiline: true }, length: { within: 1..10 }, allow_blank: true

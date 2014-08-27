@@ -10,119 +10,119 @@
 <%end%>
 <% quantity = quantity.sort_by{|k|-k[0]}%>
 <%# quantity = quantity.sort{|a,b| b[0] <=> a[0]}%>
-<%unless quantity[5].nil?%>
-  <script type="text/javascript">
-    $(function() {
-      $('#graph-container').highcharts({
-        chart: {
-          renderTo: 'container',
-          type: 'column'
-        },
+
+<script type="text/javascript">
+  $(function() {
+    $('#graph-container').highcharts({
+      chart: {
+        renderTo: 'container',
+        type: 'column'
+      },
+      title: {
+        text: 'Existencias'
+      },
+      subtitle: {
+        text: 'Almacén Producto Terminado'
+      },
+      xAxis: {
+        categories: ['Productos Ordenados por mas Cantidad en Kg'
+        ]
+      },
+      yAxis: {
+        min: 0,
         title: {
-          text: 'Existencias'
-        },
-        subtitle: {
-          text: 'Almacén Producto Terminado'
-        },
-        xAxis: {
-          categories: ['Productos Ordenados por mas Cantidad en Kg'
-          ]
-        },
-        yAxis: {
-          min: 0,
-          title: {
-            text: 'Cantidad en Kg'
-          }
-        },
-        legend: {
-          layout: 'vertical',
-          backgroundColor: '#FFFFFF',
-          align: 'left',
-          verticalAlign: 'top',
-          x: 800,
-          y: 70,
-          floating: true,
-          shadow: true
-        },
-        tooltip: {
-          formatter: function() {
-            return '' +
-                    this.x + ': ' + this.y + ' kg';
-          }
-        },
-        plotOptions: {
-          column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-          }
-        },
-        series: [{
-            name: '<%=quantity[0].last%>',
-            data: [<%=quantity[0].first%>]
+          text: 'Cantidad en Kg'
+        }
+      },
+      legend: {
+        layout: 'vertical',
+        backgroundColor: '#FFFFFF',
+        align: 'left',
+        verticalAlign: 'top',
+        x: 800,
+        y: 70,
+        floating: true,
+        shadow: true
+      },
+      tooltip: {
+        formatter: function() {
+          return '' +
+                  this.x + ': ' + this.y + ' kg';
+        }
+      },
+      plotOptions: {
+        column: {
+          pointPadding: 0.2,
+          borderWidth: 0
+        }
+      },
+      series: [{
+          name: '<%=quantity[0].last unless quantity[0].nil?%>',
+          data: [<%=quantity[0].first unless quantity[0].nil?%>]
 
-          }, {
-            name: '<%=quantity[1].last%>',
-            data: [<%=quantity[1].first%>]
+        }, {
+          name: '<%=quantity[1].last unless quantity[1].nil?%>',
+          data: [<%=quantity[1].first unless quantity[1].nil?%>]
 
-          }, {
-            name: '<%=quantity[2].last%>',
-            data: [<%=quantity[2].first%>]
+        }, {
+          name: '<%=quantity[2].last unless quantity[2].nil?%>',
+          data: [<%=quantity[2].first unless quantity[2].nil?%>]
 
-          }, {
-            name: '<%=quantity[3].last%>',
-            data: [<%=quantity[3].first%>]
+        }, {
+          name: '<%=quantity[3].last unless quantity[3].nil?%>',
+          data: [<%=quantity[3].first unless quantity[3].nil?%>]
 
-          }, {
-            name: '<%=quantity[4].last%>',
-            data: [<%=quantity[4].first%>]
+        }, {
+          name: '<%=quantity[4].last unless quantity[4].nil?%>',
+          data: [<%=quantity[4].first unless quantity[4].nil?%>]
 
-          }, {
-            name: '<%=quantity[5].last%>',
-            data: [<%=quantity[5].first%>]
+        }, {
+          name: '<%=quantity[5].last unless quantity[5].nil?%>',
+          data: [<%=quantity[5].first unless quantity[5].nil?%>]
 
-          }, {
-            name: '<%=quantity[6].last%>',
-            data: [<%=quantity[6].first%>]
+        }, {
+          name: '<%=quantity[6].last unless quantity[6].nil?%>',
+          data: [<%=quantity[6].first unless quantity[6].nil?%>]
 
-          }, {
-            name: '<%=quantity[7].last%>',
-            data: [<%=quantity[7].first%>]
+        }, {
+          name: '<%=quantity[7].last unless quantity[7].nil?%>',
+          data: [<%=quantity[7].first unless quantity[7].nil?%>]
 
-          }, {
-            name: '<%=quantity[8].last%>',
-            data: [<%=quantity[8].first%>]
+        }, {
+          name: '<%=quantity[8].last unless quantity[8].nil?%>',
+          data: [<%=quantity[8].first unless quantity[8].nil?%>]
 
-          }, {
-            name: '<%=quantity[9].last%>',
-            data: [<%=quantity[9].first%>]
+        }, {
+          name: '<%=quantity[9].last unless quantity[9].nil?%>',
+          data: [<%=quantity[9].first unless quantity[9].nil?%>]
 
-          }]
-      });
+        }]
     });
-    $(document).ready(function() {
-      $("#graph, #graph1").click(function() {
-        $("#graph-container").fadeToggle("slow");
-      });
+  });
+  $(document).ready(function() {
+    $("#graph, #graph1").click(function() {
+      $("#graph-container").fadeToggle("slow");
     });
-  </script>
-<%end%>
+  });
+</script>
+
 <div class="page-header">
   <h3><%= "Existencias en Almacén Producto Terminado" %></h3>
 </div>
 <%= link_to image_tag("/assets/topten.jpg", :size => "60x60"), "#" , :id => "graph", :title => "Gráfica de Existencias (10 en mayor cantidad Kg)"%>  <%=link_to "Productos con más cantidad en almacén.", "#" , :id => "graph1"%>
-<div id="graph-container" style="width: 1000px; height: 400px; margin-left: -40px"  data-theme="a"  hidden="true"></div>
+<div id="graph-container" style="width: 1000px; height: 400px; margin-left: -40px"  data-theme="a" hidden="true"></div>
 
-<%= javascript_include_tag "highcharts", "exporting" %>
+<script>jQuery.noConflict();</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <div class="table-responsive" style="margin-top: 20px;">
   <table class="table table-bordered table-hover table-striped">
     <thead>
       <tr>
-        <th><%= t('layouts.application.actions') %></th>
-        <th><%= t'.id' %></th>
         <th><%= t'.IdExistencia' %></th>
         <th><%= t'.IdArticulo' %></th>
         <th><%= t'.IdAlmacen' %></th>
         <th><%= t'.Cantidad' %></th>
+        <th><%= t'.Lote' %></th>
         <th><%= t'.Fecha' %></th>
         <th><%= t'.FechaCad' %></th>
       </tr>
@@ -135,20 +135,21 @@
         <% @model = existencium %> 
 
         <tr>
-          <td><%= render "partials/index_links" %></td>
           <%if can? :show, Existencium %>
-            <td><%=link_to existencium.id, existencium, :class => "btn btn-xs btn-primary" %></td>
+            <td><%=link_to existencium.IdExistencia, existencium, :class => "btn btn-xs btn-primary" %></td>
           <%else%>
-            <td><%= label existencium.id, existencium.id, :class => "btn btn-xs btn-default", :disabled => true%></td>
+            <td><%= label existencium.IdExistencia, existencium.IdExistencia, :class => "btn btn-xs btn-default", :disabled => true%></td>
           <%end%>
-          <td><%= number_with_delimiter(existencium.IdExistencia, locale: session[:locale]) %></td>
           <td><%= number_with_delimiter(existencium.IdArticulo, locale: session[:locale]).to_s + " (" + Articulo.find_by_idArticulo(existencium.IdArticulo).Descripcion + ")" %></td>
-          <td><%#= number_with_delimiter(existencium.IdAlmacen, locale: session[:locale]).to_s + " (" + Almacen.find_by_IdAlmacen(existencium.IdAlmacen).name + ")" %></td>
-          <td><%#= number_with_delimiter(existencium.Cantidad, locale: session[:locale]) %></td>
-          <td><%= existencium.Fecha %></td>
-          <td><%= existencium.FechaCad %></td>
+          <td><%= number_with_delimiter(existencium.IdAlmacen, locale: session[:locale]).to_s + " (" + Almacene.find(existencium.IdAlmacen).Nombre + ")" %></td>
+          <td><%= number_with_delimiter(existencium.Cantidad, locale: session[:locale]) %></td>
+          <td><%= existencium.Lote %></td>
+          <td><%= I18n.l existencium.Fecha, :format => :long unless existencium.Fecha.nil? %></td>
+          <td><%= I18n.l existencium.FechaCad, :format => :long unless existencium.FechaCad.nil?  %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<%= javascript_include_tag "highcharts", "exporting", "#{session[:faye_url]}.js" %>

@@ -26,3 +26,7 @@
 //= require jquery.inspect
 //= require modernizr-2.7.1.dev
 //= require prefixfree.min
+//= require jquery.mobile-1.4.3
+//= require jquery.mobile-1.4.3.min
+//= require jquery
+//= require jquery_ujs

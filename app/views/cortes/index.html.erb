@@ -2,7 +2,6 @@
   <table class="table table-bordered table-hover table-striped">
     <thead>
       <tr>
-        <th><%= t('layouts.application.actions') %></th>
         <th><%= t'.IDcorte' %></th>
         <th><%= t'.peso' %></th>
         <th><%= t'.piezas' %></th>
@@ -25,7 +24,6 @@
         <% @model = corte %> 
 
         <tr>
-          <td><%= render "partials/index_links" %></td>
           <%if can? :show, Corte %>
             <td><%=link_to corte.id, corte, :class => "btn btn-xs btn-primary" %></td>
           <%else%>
