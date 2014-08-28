@@ -7,7 +7,7 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require jquery-1.9.1
-//= require jquery.mobile
+//= require jquery.mobile.min
 $(document).on('page:load', function() {
     alert("hola");
 });
