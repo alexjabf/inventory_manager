@@ -73,5 +73,5 @@ gem "seed_dump"#https://github.com/rroblak/seed_dump rake db:seed:dump
 gem 'activerecord-session_store'
 gem 'tiny_tds', '~> 0.6.2'
 gem 'activerecord-sqlserver-adapter', '~> 4.0.0'
-gem 'jquery_mobile_rails'
+gem 'jquery_mobile_rails', '1.4.3'
 #gem "protected_attributes"
