@@ -1,15 +1,17 @@
 class AlmacenesController < ApplicationController
   before_action :set_almacene, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
-  before_filter :get_data, :except => [:show, :destroy]
+#  before_filter :get_data, :except => [:show, :destroy]
   load_and_authorize_resource except: [:create]
 
   # GET /almacenes
   def index
-  end
+        @almacenes = Almacene.paginate(:page => params[:page], :per_page => 20).order('IdAlmacen DESC') 
+ end
 
   # GET /almacenes/1
   def show
+        @almacene = Almacene.find(params[:id])
   end
 
   # GET /almacenes/new

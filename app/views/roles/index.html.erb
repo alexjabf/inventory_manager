@@ -2,10 +2,6 @@
   <table>
     <thead>
       <tr>
-        <%if can? :destroy, Role %>
-          <th><input id="select-all" type="checkbox"></input></th>
-          <%end%>
-        <th><%= t('layouts.application.actions') %></th>
         <th><%= t'.id' %></th>
         <th><%= t('.protected') %></th>
         <th><%= t('.name') %></th>
@@ -17,10 +13,6 @@
       <% @roles.each do |role| %>
         <% @model = role %>
         <tr>
-          <%if can? :destroy, Role %>
-            <td><%= check_box_tag "roles[]", role.id, false, :class => 'check-all'%></td>
-          <%end%>
-          <td><%= render "partials/index_links" %></td>
           <%if can? :show, Role %>
             <td><%=link_to role.id, role, :class => "btn btn-xs btn-primary"%></td>
           <%else%>

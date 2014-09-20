@@ -2,7 +2,6 @@
   <table class="table table-bordered table-hover table-striped">
     <thead>
       <tr>
-        <th><%= t('layouts.application.actions') %></th>
         <th><%= t'.id' %></th>
         <th><%= t'.first_name' %></th>
         <th><%= t'.last_name' %></th>
@@ -15,8 +14,7 @@
       <% @users.each do |user| %>
         <% @model = user %> 
         <tr>
-          <td><%= render "partials/index_links" %></td>
-          <%if can? :show, User %>
+          <%if can? :show, User and !user.role.superadmin%>
             <td><%=link_to user.id, user, :class => "btn btn-xs btn-primary" %></td>
           <%else%>
             <td><%= label user.id, user.id, :class => "btn btn-xs btn-default", :disabled => true%></td>

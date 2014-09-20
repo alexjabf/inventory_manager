@@ -35,7 +35,7 @@
         <%end%>
       <%end%>
     <%else%>
-      <%if can? :edit, to_model(controller_name) %>
+      <%if can? :edit, to_model(controller_name) and controller_name != "lotecanals" %>
         <%=link_to eval("edit_#{controller_name.singularize}_path(@#{controller_name.singularize})"), data: {disable_with: t("actions.editing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :title => t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}")), :class => "btn btn-xs btn-warning" do%>
           <%=t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}"))%>
         <%end%>

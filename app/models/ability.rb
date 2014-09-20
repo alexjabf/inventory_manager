@@ -33,7 +33,7 @@ class Ability
         can [:show, :index], Existencium
       elsif user.role.administrator == true
         can [:show, :edit, :update, :index], User, :id => user.id
-        can [:show, :index], Role, :id => user.role.id 
+        #can [:show, :index], Role, :id => user.role.id 
         can [:show, :index], Familium
         can [:show, :index], Tarima
         can [:show, :index], Corte

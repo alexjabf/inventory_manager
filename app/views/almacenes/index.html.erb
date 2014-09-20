@@ -2,7 +2,6 @@
   <table class="table table-bordered table-hover table-striped">
     <thead>
       <tr>
-        <th><%= t('layouts.application.actions') %></th>
         <th><%= t'.IdAlmacen' %></th>
         <th><%= t'.Nombre' %></th>
         <th><%= t'.TipoAlmacen' %></th>
@@ -16,7 +15,6 @@
         <% @model = almacene %> 
 
         <tr>
-          <td><%= render "partials/index_links" %></td>
           <%if can? :show, Familium %>
             <td><%=link_to almacene.IdAlmacen, almacene, :class => "btn btn-xs btn-primary" %></td>
           <%else%>

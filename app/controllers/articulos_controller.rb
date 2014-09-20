@@ -1,15 +1,17 @@
 class ArticulosController < ApplicationController
   before_action :set_articulo, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
-  before_filter :get_data, :except => [:show, :destroy]
+ # before_filter :get_data, :except => [:show, :destroy]
   load_and_authorize_resource except: [:create]
 
   # GET /articulos
   def index
-  end
+@articulos = Articulo.paginate(:page => params[:page], :per_page => 20).order('idArticulo DESC')  
+end
 
   # GET /articulos/1
   def show
+@articulo = Articulo.find(params[:id])
   end
 
   # GET /articulos/new
